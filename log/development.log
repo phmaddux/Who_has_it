@@ -1,0 +1,14 @@
+Started GET "/" for ::1 at 2017-11-10 15:02:44 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/Hunter/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/Hunter/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb (77.0ms)
+Completed 200 OK in 3515ms (Views: 210.5ms)
+
+
+Started GET "/" for ::1 at 2017-11-10 15:16:51 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/Hunter/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/Hunter/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb (9.8ms)
+Completed 200 OK in 30ms (Views: 20.5ms)
+
+
