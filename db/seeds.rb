@@ -10,6 +10,7 @@ hunter = User.new({
 
 
 })
+hunter.save
 
 john = User.new({
     username: "John",
@@ -17,7 +18,7 @@ john = User.new({
     password: "password"
 
 })
-
+john.save
 
 
 atlanta = City.new({
