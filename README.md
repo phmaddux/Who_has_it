@@ -1,24 +1,14 @@
-# README
+# README Who Has It?
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## The idea behind this is simple. I think people would want a simple and clean page, with a few innovative features that makes it all but impossible to forget who they have loaned what to.
 
-Things you may want to cover:
+### ERD: https://i.imgur.com/xLILcwD.png
 
-* Ruby version
+### Trello: https://trello.com/b/f0oFVvow/project-4
 
-* System dependencies
+### Wireframe: https://gomockingbird.com/projects/sff1lv4/TnMd3U
 
-* Configuration
+### Github: https://github.com/phmaddux/Who_has_it
 
-* Database creation
+### Heroku: https://evening-meadow-89474.herokuapp.com/
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...

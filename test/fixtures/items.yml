@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  picture: MyString
+  returned: MyString
+  condition_outgoing: MyString
+  condition_returned: MyString
+  description: MyString
+  User: one
+  Person: one
+
+two:
+  name: MyString
+  picture: MyString
+  returned: MyString
+  condition_outgoing: MyString
+  condition_returned: MyString
+  description: MyString
+  User: two
+  Person: two
