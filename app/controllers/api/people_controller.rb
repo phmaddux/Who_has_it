@@ -13,7 +13,7 @@ class Api::PeopleController < ApplicationController
 
         @user.person << @person
         @user.save!
-        render json @person
+        render json: @person
     end
     def update
         @person = Person.find(params[:id])
@@ -27,6 +27,6 @@ class Api::PeopleController < ApplicationController
     private
 
     def person_params
-        params.require(:person).permit(:nickname, :first_name, :last_name, :picture, :phone_number, :email, :would_lend_again, :notes)
+        params.require(:person).permit(:nickname, :first_name, :last_name)
     end
 end
