@@ -1762,3 +1762,64 @@ Processing by Api::ItemsController#index as HTML
 Completed 200 OK in 6ms (Views: 1.0ms | ActiveRecord: 1.2ms)
 
 
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Load (0.6ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."user_id" = $1[0m  [["user_id", 3]]
+  [1m[35mSQL (0.5ms)[0m  [1m[31mDELETE FROM "items" WHERE "items"."id" = $1[0m  [["id", 3]]
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "items" WHERE "items"."id" = $1[0m  [["id", 4]]
+  [1m[35mSQL (0.6ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 3]]
+  [1m[35m (13.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."user_id" = $1[0m  [["user_id", 4]]
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "items" WHERE "items"."id" = $1[0m  [["id", 5]]
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "items" WHERE "items"."id" = $1[0m  [["id", 6]]
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 4]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  [1m[36mPerson Load (0.6ms)[0m  [1m[34mSELECT "people".* FROM "people"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[31mDELETE FROM "people" WHERE "people"."id" = $1[0m  [["id", 4]]
+  [1m[35m (5.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[31mDELETE FROM "people" WHERE "people"."id" = $1[0m  [["id", 5]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[31mDELETE FROM "people" WHERE "people"."id" = $1[0m  [["id", 6]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[31mDELETE FROM "people" WHERE "people"."id" = $1[0m  [["id", 7]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "people" WHERE "people"."id" = $1[0m  [["id", 9]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "users" ("email", "username", "password", "picture", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "placeholder@place.com"], ["username", "Hunter"], ["password", "password"], ["picture", "****"], ["created_at", "2017-11-13 17:22:34.729861"], ["updated_at", "2017-11-13 17:22:34.729861"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "people" ("nickname", "first_name", "last_name", "picture", "phone_number", "email", "would_lend_again", "notes", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["nickname", "Tommy"], ["first_name", ""], ["last_name", ""], ["picture", ""], ["phone_number", ""], ["email", ""], ["would_lend_again", "f"], ["notes", ""], ["created_at", "2017-11-13 17:22:34.733369"], ["updated_at", "2017-11-13 17:22:34.733369"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "people" ("nickname", "first_name", "last_name", "picture", "phone_number", "email", "would_lend_again", "notes", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["nickname", "Mick"], ["first_name", ""], ["last_name", ""], ["picture", ""], ["phone_number", ""], ["email", ""], ["would_lend_again", "f"], ["notes", ""], ["created_at", "2017-11-13 17:22:34.736937"], ["updated_at", "2017-11-13 17:22:34.736937"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (3.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO "items" ("name", "picture", "returned", "condition_outgoing", "condition_returned", "description", "user_id", "person_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["name", "Pen"], ["picture", "****"], ["returned", "f"], ["condition_outgoing", ""], ["condition_returned", ""], ["description", ""], ["user_id", 5], ["person_id", 11], ["created_at", "2017-11-13 17:22:34.744795"], ["updated_at", "2017-11-13 17:22:34.744795"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "items" ("name", "picture", "returned", "condition_outgoing", "condition_returned", "description", "user_id", "person_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["name", "Computer"], ["picture", "****"], ["returned", "f"], ["condition_outgoing", ""], ["condition_returned", ""], ["description", ""], ["user_id", 5], ["person_id", 12], ["created_at", "2017-11-13 17:22:34.749959"], ["updated_at", "2017-11-13 17:22:34.749959"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "username", "password", "picture", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "placeholder@place.com"], ["username", "John"], ["password", "password"], ["picture", "****"], ["created_at", "2017-11-13 17:22:34.752695"], ["updated_at", "2017-11-13 17:22:34.752695"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "people" ("nickname", "first_name", "last_name", "picture", "phone_number", "email", "would_lend_again", "notes", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["nickname", "Mike"], ["first_name", ""], ["last_name", ""], ["picture", ""], ["phone_number", ""], ["email", ""], ["would_lend_again", "f"], ["notes", ""], ["created_at", "2017-11-13 17:22:34.755215"], ["updated_at", "2017-11-13 17:22:34.755215"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "people" ("nickname", "first_name", "last_name", "picture", "phone_number", "email", "would_lend_again", "notes", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["nickname", "Heather"], ["first_name", ""], ["last_name", ""], ["picture", ""], ["phone_number", ""], ["email", ""], ["would_lend_again", "f"], ["notes", ""], ["created_at", "2017-11-13 17:22:34.757642"], ["updated_at", "2017-11-13 17:22:34.757642"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "items" ("name", "picture", "returned", "condition_outgoing", "condition_returned", "description", "user_id", "person_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["name", "Book"], ["picture", "****"], ["returned", "f"], ["condition_outgoing", ""], ["condition_returned", ""], ["description", ""], ["user_id", 6], ["person_id", 14], ["created_at", "2017-11-13 17:22:34.760490"], ["updated_at", "2017-11-13 17:22:34.760490"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "items" ("name", "picture", "returned", "condition_outgoing", "condition_returned", "description", "user_id", "person_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["name", "Book2"], ["picture", "****"], ["returned", "f"], ["condition_outgoing", ""], ["condition_returned", ""], ["description", ""], ["user_id", 6], ["person_id", 13], ["created_at", "2017-11-13 17:22:34.763455"], ["updated_at", "2017-11-13 17:22:34.763455"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
