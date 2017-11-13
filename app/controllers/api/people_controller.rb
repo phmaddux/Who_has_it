@@ -1,6 +1,6 @@
 class Api::PeopleController < ApplicationController
     def index
-        @people = Person.all
+        @people = User.find(params[:user_id]).people.reverse
         render json: @people
     end
     def show
@@ -8,6 +8,7 @@ class Api::PeopleController < ApplicationController
         render json: @person
     end
     def create
+        @user = User.find(params[:user_id])
         @person = Person.create!(person_params)
         render json: @person
     end
