@@ -14,6 +14,7 @@ class SignUp extends Component {
             password: "",
             picture: "",
         },
+        newUser: {},
         refresh: false,
         flashError: false
     }
@@ -26,11 +27,12 @@ class SignUp extends Component {
         console.log(this.state.user)
     }
     handleSubmit = async (event) => {
+        event.preventDefault()
         try{
             const response = await axios.post(`/api/users/`, {
                 "user": this.state.user
             })
-            this.setState({refresh: true})
+            this.setState({refresh: true, newUser: response.data})
         } catch (error) {
             this.setState({flashError: true})
             console.log(this.state.flashError)
@@ -39,8 +41,9 @@ class SignUp extends Component {
     }
 
     render() {
-        if (this.state.refresh){
-            window.location.reload()
+        if (this.state.refresh) {
+            const userId = this.state.newUser.id;
+            return <Redirect to={`/users/${userId}/people`}/>
         }
         if(this.state.flashError){
             let div = document.getElementById("flash")
