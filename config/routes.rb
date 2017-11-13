@@ -3,6 +3,6 @@ namespace :api do
   resources :users do
       resources :items
     end
+    resources :people
   end
-  resource :people
 end
