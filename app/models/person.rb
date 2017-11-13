@@ -1,6 +1,6 @@
 class Person < ApplicationRecord
-    validates :nickname, presence: true,
-    has_many :items,
+    validates :nickname, presence: true
+    has_many :items
 end
 
 # dependent: :destroy

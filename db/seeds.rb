@@ -2,76 +2,96 @@ User.destroy_all
 Item.destroy_all
 Person.destroy_all
 
-hunter = User.new({
+hunter = User.create({
     username: "Hunter",
     email: "placeholder@place.com",
     password: "password",
     picture: "****",
-    people: [
-        Person.new({
-            nickname: "Tommy",
-            first_name: "",
-            last_name: "",
-            email: "",
-            phone_number: "",
-            picture: ""
-            would_lend_again: boolean,
-            notes: "",
-            items: [
-                Item.create({
-                    name: "Pen",
-                    picture: "****",
-                    returned: boolean,
-                    condition_outgoing: "",
-                    condition_reurned: "",
-                    description: ""
-                })
-                Item.create({
-                    name: "Pen",
-                    picture: "****",
-                    returned: boolean,
-                    condition_outgoing: "",
-                    condition_reurned: "",
-                    description: ""
-                })                
-        ]
-    ]
+})      
+tommy = Person.create({
+    nickname: "Tommy",
+    first_name: "",
+    last_name: "",
+    email: "",
+    phone_number: "",
+    picture: "",
+    would_lend_again: false,
+    notes: "",
 })
-hunter.save
+mick = Person.create({
+    nickname: "Mick",
+    first_name: "",
+    last_name: "",
+    email: "",
+    phone_number: "",
+    picture: "",
+    would_lend_again: false,
+    notes: "",
+})
+Item.create({
+    name: "Pen",
+    picture: "****",
+    returned: false,
+    condition_outgoing: "",
+    condition_returned: "",
+    description: "",
+    user: hunter,
+    person: tommy,
+})
+Item.create({
+    name: "Computer",
+    picture: "****",
+    returned: false,
+    condition_outgoing: "",
+    condition_returned: "",
+    description: "",
+    user: hunter,
+    person: mick,
+})
 
-john = User.new({
+john = User.create({
     username: "John",
-    email: "placeholder2@place.com",
+    email: "placeholder@place.com",
     password: "password",
     picture: "****",
-    people: [
-        Person.new({
-            nickname: "Ian",
-            first_name: "",
-            last_name: "",
-            email: "",
-            phone_number: "",
-            picture: ""
-            would_lend_again: boolean,
-            notes: "",
-            items: [
-                Item.create({
-                    name: "Book",
-                    picture: "****",
-                    returned: boolean,
-                    condition_outgoing: "",
-                    condition_reurned: "",
-                    description: ""
-                })
-                Item.create({
-                    name: "Book2",
-                    picture: "****",
-                    returned: boolean,
-                    condition_outgoing: "",
-                    condition_reurned: "",
-                    description: ""
-                })                
-        ]
-    ]
+})      
+mike = Person.create({
+    nickname: "Mike",
+    first_name: "",
+    last_name: "",
+    email: "",
+    phone_number: "",
+    picture: "",
+    would_lend_again: false,
+    notes: "",
 })
-john.save
+heather = Person.create({
+    nickname: "Heather",
+    first_name: "",
+    last_name: "",
+    email: "",
+    phone_number: "",
+    picture: "",
+    would_lend_again: false,
+    notes: "",
+})
+Item.create({
+    name: "Book",
+    picture: "****",
+    returned: false,
+    condition_outgoing: "",
+    condition_returned: "",
+    description: "",
+    user: john,
+    person: heather,
+})
+Item.create({
+    name: "Book2",
+    picture: "****",
+    returned: false,
+    condition_outgoing: "",
+    condition_returned: "",
+    description: "",
+    user: john,
+    person: mike,
+})
