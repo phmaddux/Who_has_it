@@ -25,9 +25,7 @@ class LogIn extends Component {
     logIn = async (event) => {
         event.preventDefault()
         try {
-            console.log(1)
             const response = await axios.get(`/api/users/${this.state.user.username}`)
-            console.log(2)
             this.setState({ userCheck: response.data })
             console.log(this.state.userCheck)
             if (this.state.userCheck.password === this.state.user.password) {

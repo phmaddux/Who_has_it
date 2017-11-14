@@ -4,8 +4,8 @@ import {Link, withRouter } from 'react-router-dom'
 
 
 class NavBar extends Component {
+
     render() {
-        console.log(this.props)
         const userId = this.props.match.params.userId
         return (
             <div>
