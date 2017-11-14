@@ -2608,3 +2608,557 @@ Completed 422 Unprocessable Entity in 7ms (ActiveRecord: 0.5ms)
 ActiveRecord::RecordInvalid (Validation failed: Username can't be blank, Email can't be blank, Password can't be blank):
   
 app/controllers/api/users_controller.rb:11:in `create'
+Started POST "/api/users/" for 127.0.0.1 at 2017-11-14 10:32:13 -0500
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::UsersController#create as HTML
+  Parameters: {"user"=>{"username"=>"", "email"=>"", "password"=>"[FILTERED]", "picture"=>""}}
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Completed 422 Unprocessable Entity in 56ms (ActiveRecord: 6.4ms)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Username can't be blank, Email can't be blank, Password can't be blank):
+  
+app/controllers/api/users_controller.rb:11:in `create'
+Started POST "/api/users/" for 127.0.0.1 at 2017-11-14 11:08:44 -0500
+Started POST "/api/users/" for 127.0.0.1 at 2017-11-14 11:08:54 -0500
+Processing by Api::UsersController#create as HTML
+  Parameters: {"user"=>{"username"=>"b", "email"=>"b", "password"=>"[FILTERED]", "picture"=>""}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (4.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "username", "password", "picture", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "b"], ["username", "b"], ["password", "b"], ["picture", ""], ["created_at", "2017-11-14 16:08:54.357648"], ["updated_at", "2017-11-14 16:08:54.357648"]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 34ms (Views: 1.1ms | ActiveRecord: 6.9ms)
+
+
+Started POST "/api/users/" for 127.0.0.1 at 2017-11-14 11:08:54 -0500
+Processing by Api::UsersController#create as HTML
+  Parameters: {"user"=>{"username"=>"b", "email"=>"b", "password"=>"[FILTERED]", "picture"=>""}}
+Processing by Api::UsersController#create as HTML
+  Parameters: {"user"=>{"username"=>"b", "email"=>"b", "password"=>"[FILTERED]", "picture"=>""}}
+  [1m[35m (2.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (3.8ms)[0m  [1m[32mINSERT INTO "users" ("email", "username", "password", "picture", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "b"], ["username", "b"], ["password", "b"], ["picture", ""], ["created_at", "2017-11-14 16:08:54.596541"], ["updated_at", "2017-11-14 16:08:54.596541"]]
+  [1m[35mSQL (1.9ms)[0m  [1m[32mINSERT INTO "users" ("email", "username", "password", "picture", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "b"], ["username", "b"], ["password", "b"], ["picture", ""], ["created_at", "2017-11-14 16:08:54.598764"], ["updated_at", "2017-11-14 16:08:54.598764"]]
+  [1m[35m (3.0ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 55ms (Views: 0.8ms | ActiveRecord: 8.9ms)
+
+
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 21ms (Views: 0.7ms | ActiveRecord: 8.6ms)
+
+
+Started POST "/api/users/" for 127.0.0.1 at 2017-11-14 11:10:23 -0500
+Processing by Api::UsersController#create as HTML
+  Parameters: {"user"=>{"username"=>"b", "email"=>"b", "password"=>"[FILTERED]", "picture"=>""}}
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "username", "password", "picture", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "b"], ["username", "b"], ["password", "b"], ["picture", ""], ["created_at", "2017-11-14 16:10:23.330445"], ["updated_at", "2017-11-14 16:10:23.330445"]]
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 9ms (Views: 0.6ms | ActiveRecord: 2.6ms)
+
+
+Started POST "/api/users/" for 127.0.0.1 at 2017-11-14 11:15:43 -0500
+Processing by Api::UsersController#create as HTML
+  Parameters: {"user"=>{"username"=>"", "email"=>"", "password"=>"[FILTERED]", "picture"=>""}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.9ms)[0m  [1m[31mROLLBACK[0m
+Completed 422 Unprocessable Entity in 8ms (ActiveRecord: 1.1ms)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Username can't be blank, Email can't be blank, Password can't be blank):
+  
+app/controllers/api/users_controller.rb:12:in `create'
+Started POST "/api/users/" for 127.0.0.1 at 2017-11-14 11:22:37 -0500
+Processing by Api::UsersController#create as HTML
+  Parameters: {"user"=>{"username"=>"", "email"=>"", "password"=>"[FILTERED]", "picture"=>""}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Completed 422 Unprocessable Entity in 4ms (ActiveRecord: 0.4ms)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Username can't be blank, Email can't be blank, Password can't be blank):
+  
+app/controllers/api/users_controller.rb:12:in `create'
+Started POST "/api/users/" for 127.0.0.1 at 2017-11-14 11:24:11 -0500
+Processing by Api::UsersController#create as HTML
+  Parameters: {"user"=>{"username"=>"", "email"=>"", "password"=>"[FILTERED]", "picture"=>""}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+Completed 422 Unprocessable Entity in 6ms (ActiveRecord: 0.4ms)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Username can't be blank, Email can't be blank, Password can't be blank):
+  
+app/controllers/api/users_controller.rb:12:in `create'
+Started POST "/api/users/" for 127.0.0.1 at 2017-11-14 11:25:46 -0500
+Processing by Api::UsersController#create as HTML
+  Parameters: {"user"=>{"username"=>"", "email"=>"", "password"=>"[FILTERED]", "picture"=>""}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+Completed 422 Unprocessable Entity in 28ms (ActiveRecord: 8.9ms)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Username can't be blank, Email can't be blank, Password can't be blank):
+  
+app/controllers/api/users_controller.rb:12:in `create'
+Started GET "/api/users/" for 127.0.0.1 at 2017-11-14 11:32:12 -0500
+Processing by Api::UsersController#index as HTML
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 51ms (Views: 35.9ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/api/users/" for 127.0.0.1 at 2017-11-14 11:32:18 -0500
+Processing by Api::UsersController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 5ms (Views: 3.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/api/users/" for 127.0.0.1 at 2017-11-14 11:32:20 -0500
+Processing by Api::UsersController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/users/" for 127.0.0.1 at 2017-11-14 11:32:22 -0500
+Processing by Api::UsersController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 5ms (Views: 3.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/users/" for 127.0.0.1 at 2017-11-14 11:32:28 -0500
+Processing by Api::UsersController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/users/" for 127.0.0.1 at 2017-11-14 11:32:40 -0500
+Processing by Api::UsersController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/users/" for 127.0.0.1 at 2017-11-14 11:32:43 -0500
+Processing by Api::UsersController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 5ms (Views: 3.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/users/" for 127.0.0.1 at 2017-11-14 11:32:45 -0500
+Processing by Api::UsersController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/users/" for 127.0.0.1 at 2017-11-14 11:32:46 -0500
+Processing by Api::UsersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/users/" for 127.0.0.1 at 2017-11-14 11:32:46 -0500
+Processing by Api::UsersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/users/" for 127.0.0.1 at 2017-11-14 11:32:47 -0500
+Processing by Api::UsersController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/users/" for 127.0.0.1 at 2017-11-14 11:33:28 -0500
+Processing by Api::UsersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 18ms (Views: 11.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/users/" for 127.0.0.1 at 2017-11-14 11:33:29 -0500
+Processing by Api::UsersController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/users/" for 127.0.0.1 at 2017-11-14 11:33:47 -0500
+Processing by Api::UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 24ms (Views: 12.5ms | ActiveRecord: 5.5ms)
+
+
+Started GET "/api/users/" for 127.0.0.1 at 2017-11-14 11:35:47 -0500
+Processing by Api::UsersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 31ms (Views: 20.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/users/" for 127.0.0.1 at 2017-11-14 11:35:48 -0500
+Processing by Api::UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 10ms (Views: 9.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/users/" for 127.0.0.1 at 2017-11-14 11:35:51 -0500
+Processing by Api::UsersController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/api/users/" for 127.0.0.1 at 2017-11-14 11:36:03 -0500
+Processing by Api::UsersController#create as HTML
+  Parameters: {"user"=>{"username"=>"", "email"=>"", "password"=>"[FILTERED]", "picture"=>""}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Completed 422 Unprocessable Entity in 5ms (ActiveRecord: 0.4ms)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Username can't be blank, Email can't be blank, Password can't be blank):
+  
+app/controllers/api/users_controller.rb:13:in `create'
+Started GET "/api/users/" for 127.0.0.1 at 2017-11-14 11:36:42 -0500
+Processing by Api::UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 23ms (Views: 13.1ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/api/users/" for 127.0.0.1 at 2017-11-14 11:36:44 -0500
+Processing by Api::UsersController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 5ms (Views: 3.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/users/" for 127.0.0.1 at 2017-11-14 11:37:09 -0500
+Processing by Api::UsersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/users/" for 127.0.0.1 at 2017-11-14 11:37:10 -0500
+Processing by Api::UsersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 4ms (Views: 3.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/users/" for 127.0.0.1 at 2017-11-14 11:38:25 -0500
+Processing by Api::UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 38ms (Views: 25.2ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/api/users/" for 127.0.0.1 at 2017-11-14 11:38:29 -0500
+Processing by Api::UsersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/users/" for 127.0.0.1 at 2017-11-14 11:38:36 -0500
+Processing by Api::UsersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 6ms (Views: 5.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/users/" for 127.0.0.1 at 2017-11-14 11:38:37 -0500
+Processing by Api::UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 6ms (Views: 4.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/users/" for 127.0.0.1 at 2017-11-14 11:38:38 -0500
+Processing by Api::UsersController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 7ms (Views: 5.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/users/" for 127.0.0.1 at 2017-11-14 11:39:03 -0500
+Processing by Api::UsersController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 23ms (Views: 13.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/users/" for 127.0.0.1 at 2017-11-14 11:39:19 -0500
+Processing by Api::UsersController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 24ms (Views: 15.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/users/Hunter" for 127.0.0.1 at 2017-11-14 11:39:56 -0500
+Processing by Api::UsersController#show as HTML
+  Parameters: {"id"=>"Hunter"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 4ms (Views: 0.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/api/users/Hunter" for 127.0.0.1 at 2017-11-14 11:40:25 -0500
+Processing by Api::UsersController#show as HTML
+  Parameters: {"id"=>"Hunter"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/users/Hunter" for 127.0.0.1 at 2017-11-14 11:41:13 -0500
+Processing by Api::UsersController#show as HTML
+  Parameters: {"id"=>"Hunter"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/users/Hunter" for 127.0.0.1 at 2017-11-14 11:41:35 -0500
+Processing by Api::UsersController#show as HTML
+  Parameters: {"id"=>"Hunter"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/users/Hunter" for 127.0.0.1 at 2017-11-14 11:42:54 -0500
+Processing by Api::UsersController#show as HTML
+  Parameters: {"id"=>"Hunter"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/users/Hunter" for 127.0.0.1 at 2017-11-14 11:43:09 -0500
+Processing by Api::UsersController#show as HTML
+  Parameters: {"id"=>"Hunter"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/users/Hunter" for 127.0.0.1 at 2017-11-14 11:43:50 -0500
+Processing by Api::UsersController#show as HTML
+  Parameters: {"id"=>"Hunter"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/users/Hunter" for 127.0.0.1 at 2017-11-14 11:44:13 -0500
+Processing by Api::UsersController#show as HTML
+  Parameters: {"id"=>"Hunter"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/api/users/Hunter" for 127.0.0.1 at 2017-11-14 11:44:15 -0500
+Processing by Api::UsersController#show as HTML
+  Parameters: {"id"=>"Hunter"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/users/Hunter" for 127.0.0.1 at 2017-11-14 11:45:14 -0500
+Processing by Api::UsersController#show as HTML
+  Parameters: {"id"=>"Hunter"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/users/Hunter" for 127.0.0.1 at 2017-11-14 11:45:15 -0500
+Processing by Api::UsersController#show as HTML
+  Parameters: {"id"=>"Hunter"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/users/Hunter" for 127.0.0.1 at 2017-11-14 11:45:15 -0500
+Processing by Api::UsersController#show as HTML
+  Parameters: {"id"=>"Hunter"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/users/Hunter" for 127.0.0.1 at 2017-11-14 11:45:16 -0500
+Processing by Api::UsersController#show as HTML
+  Parameters: {"id"=>"Hunter"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/users/Hunter" for 127.0.0.1 at 2017-11-14 11:45:16 -0500
+Processing by Api::UsersController#show as HTML
+  Parameters: {"id"=>"Hunter"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/users/Hunter" for 127.0.0.1 at 2017-11-14 11:45:16 -0500
+Processing by Api::UsersController#show as HTML
+  Parameters: {"id"=>"Hunter"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/users/Hunter" for 127.0.0.1 at 2017-11-14 11:45:16 -0500
+Processing by Api::UsersController#show as HTML
+  Parameters: {"id"=>"Hunter"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/users/Hunter" for 127.0.0.1 at 2017-11-14 11:45:17 -0500
+Processing by Api::UsersController#show as HTML
+  Parameters: {"id"=>"Hunter"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/users/Hunter" for 127.0.0.1 at 2017-11-14 11:45:17 -0500
+Processing by Api::UsersController#show as HTML
+  Parameters: {"id"=>"Hunter"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/users/Hunter" for 127.0.0.1 at 2017-11-14 11:45:17 -0500
+Processing by Api::UsersController#show as HTML
+  Parameters: {"id"=>"Hunter"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/users/Hunter" for 127.0.0.1 at 2017-11-14 11:45:17 -0500
+Processing by Api::UsersController#show as HTML
+  Parameters: {"id"=>"Hunter"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/users/Hunter" for 127.0.0.1 at 2017-11-14 11:45:18 -0500
+Processing by Api::UsersController#show as HTML
+  Parameters: {"id"=>"Hunter"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/users/Hunter" for 127.0.0.1 at 2017-11-14 11:45:18 -0500
+Processing by Api::UsersController#show as HTML
+  Parameters: {"id"=>"Hunter"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/users/Hunter" for 127.0.0.1 at 2017-11-14 11:45:18 -0500
+Processing by Api::UsersController#show as HTML
+  Parameters: {"id"=>"Hunter"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/users/Hunter" for 127.0.0.1 at 2017-11-14 11:45:18 -0500
+Processing by Api::UsersController#show as HTML
+  Parameters: {"id"=>"Hunter"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/users/Hunter" for 127.0.0.1 at 2017-11-14 11:45:19 -0500
+Processing by Api::UsersController#show as HTML
+  Parameters: {"id"=>"Hunter"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/users/Hunter" for 127.0.0.1 at 2017-11-14 11:45:19 -0500
+Processing by Api::UsersController#show as HTML
+  Parameters: {"id"=>"Hunter"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/users/Hunter" for 127.0.0.1 at 2017-11-14 11:45:19 -0500
+Processing by Api::UsersController#show as HTML
+  Parameters: {"id"=>"Hunter"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/users/Hunter" for 127.0.0.1 at 2017-11-14 11:45:19 -0500
+Processing by Api::UsersController#show as HTML
+  Parameters: {"id"=>"Hunter"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/users/" for 127.0.0.1 at 2017-11-14 11:46:01 -0500
+Processing by Api::UsersController#index as HTML
+  [1m[36mUser Load (3.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 11ms (Views: 7.0ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/api/users/Hunter" for 127.0.0.1 at 2017-11-14 11:46:10 -0500
+Processing by Api::UsersController#show as HTML
+  Parameters: {"id"=>"Hunter"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/users/Hunter" for 127.0.0.1 at 2017-11-14 11:46:35 -0500
+Processing by Api::UsersController#show as HTML
+  Parameters: {"id"=>"Hunter"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/users/Hunter" for 127.0.0.1 at 2017-11-14 11:47:08 -0500
+Processing by Api::UsersController#show as HTML
+  Parameters: {"id"=>"Hunter"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/users/Hunter" for 127.0.0.1 at 2017-11-14 11:48:08 -0500
+Processing by Api::UsersController#show as HTML
+  Parameters: {"id"=>"Hunter"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/users/31/items" for ::1 at 2017-11-14 11:51:02 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/api/users/31/items"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/api/users/Hunter" for ::1 at 2017-11-14 11:51:11 -0500
+Processing by Api::UsersController#show as HTML
+  Parameters: {"id"=>"Hunter"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/users/Hunter" for ::1 at 2017-11-14 11:54:23 -0500
+  [1m[35m (7.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::UsersController#show as HTML
+  Parameters: {"id"=>"Hunter"}
+  [1m[36mUser Load (20.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Hunter"], ["LIMIT", 1]]
+Completed 200 OK in 91ms (Views: 1.1ms | ActiveRecord: 31.7ms)
+
+
+Started GET "/api/users/Hunter" for 127.0.0.1 at 2017-11-14 11:54:33 -0500
+Processing by Api::UsersController#show as HTML
+  Parameters: {"id"=>"Hunter"}
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Hunter"], ["LIMIT", 1]]
+Completed 200 OK in 21ms (Views: 0.9ms | ActiveRecord: 9.6ms)
+
+

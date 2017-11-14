@@ -11,10 +11,10 @@ class LogIn extends Component {
             username: "",
             password: "",
         },
+        userCheck: {},
         refresh: false,
-        logInFalshError: false
+        logInFlashError: false
     }
-
     handleChange = async (event) => {
         const attribute = event.target.name
         const updateUser = { ...this.state.user }
@@ -22,48 +22,53 @@ class LogIn extends Component {
         this.setState({ user: updateUser })
         console.log(this.state.user)
     }
-
     logIn = async (event) => {
         event.preventDefault()
         try {
-            const response = await axios.get()
-
+            console.log(1)
+            const response = await axios.get(`/api/users/${this.state.user.username}`)
+            console.log(2)
+            this.setState({ userCheck: response.data })
+            console.log(this.state.userCheck)
+            if (this.state.userCheck.password === this.state.user.password) {
+                this.setState({ refresh: true })
+            }
         } catch (error) {
             this.setState({ logInFlashError: true })
-            console.log(this.state.logInFalshError)
+            console.log(this.state.logInFlashError)
         }
     }
     render() {
         if (this.state.refresh) {
-            const userId = this.state.newUser.id;
+            const userId = this.state.userCheck.id;
             return <Redirect to={`/users/${userId}/people`} />
         }
         if (this.state.logInFlashError) {
-            let div = document.getElementById("logInlogInFlash")
+            let div = document.getElementById("logInFlash")
             div.style.display = "block"
         }
         return (
             <div style={{ margin: "10px" }}>
                 <h1>Log In</h1>
-                <form>
+                <div id="logInFlash" style={{ color: "red", display: "none" }}>Your Sign In was either incomplete or incorrect. Please fill out the required fields and try again.</div>
+                <form onSubmit={this.logIn}>
                     <div>
                         <label htmlFor="username">Username: </label>
                         <TextField
-                        onChange={this.handleChange}
-                        type="text" name="email" value={this.state.username} 
-                    />
+                            onChange={this.handleChange}
+                            type="text" name="username" value={this.state.username}
+                        />
                     </div>
                     <div>
                         <label htmlFor="password">Password: </label>
                         <TextField
-                        onChange={this.handleChange}
-                        type="password" name="password" value={this.state.password}
-                    />
+                            onChange={this.handleChange}
+                            type="password" name="password" value={this.state.password}
+                        />
                     </div>
                     <FlatButton label="Log In" type="submit" style={{
                         backgroundColor: "#72E0FF"
-                    }}/>
-                    <div id="logInFlash" style={{color: "red", display: "none"}}>Your Sign In was either incomplete or incorrect. Please fill out the required fields and try again.</div>
+                    }} />
                 </form>
             </div>
         );
