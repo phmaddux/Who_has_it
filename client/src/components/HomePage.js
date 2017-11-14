@@ -14,6 +14,7 @@ class Homepage extends Component {
                 <h3>Because let's face it, life is better when you know where all your stuff is.'</h3>
                 <span>
                     <SignUp />
+                    <p>Or</p>
                     <LogIn />     
                 </span>
             </div>
