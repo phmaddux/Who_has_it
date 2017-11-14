@@ -84,7 +84,7 @@ class SignUp extends Component {
                     <FlatButton label="Submit" type="submit" style={{
                         backgroundColor: "#72E0FF"
                     }}/>
-                    <div id="flash" style={{color: "red", display: "none"}}>Please fill out the required fields.</div>
+                    <div id="flash" style={{color: "red", display: "none"}}>Your 'Sign Up' form was either incomplete or incorrect. Please fill out the required fields and try again.</div>
                     </form>
             </div>
         );

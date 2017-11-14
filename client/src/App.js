@@ -12,7 +12,6 @@ class App extends Component {
     return (
       <MuiThemeProvider>
         <div>
-          <h1>NAVBAR!</h1>
           <Router>
             <Switch>
               <Route exact path="/" component={HomePage}/>
