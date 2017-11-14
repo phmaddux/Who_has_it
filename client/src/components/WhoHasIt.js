@@ -10,10 +10,6 @@ class WhoHasIt extends Component {
 
     state = {
         people: [],
-        newPerson: {},
-        refresh: false,
-        newUser: false,
-        flashError: false
     }
 
     async componentWillMount() {
@@ -26,23 +22,7 @@ class WhoHasIt extends Component {
             console.log(error)
         }
     }
-    newPerson = async (event) => {
-        event.preventDefault()
-        try {
-            this.setState({ newUser: true })
-        } catch (error) {
-            console.log("No more people")
-        }
-    }
     render() {
-        if (this.state.refresh) {
-            const userId = this.props.match.params.userId                        
-            return <Redirect to={`/users/${userId}/people`} />
-        }
-        if (this.state.newUser) {
-            let div = document.getElementById("newUser")
-            div.style.display = "block"
-        }
         return (
             <div>
                 <NavBar />
@@ -53,7 +33,6 @@ class WhoHasIt extends Component {
                 <div>
                     <br></br>
                     <div id="newUser" style={{display: "none" }}>
-                    New User!
                     <NewPersonForm />
                     </div>
                 <br></br>

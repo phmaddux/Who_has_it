@@ -7,18 +7,6 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 
 class SignUp extends Component {
-    state = {
-        user: {
-            username: "",
-            email: "",
-            password: "",
-            picture: "",
-        },
-        newUser: {},
-        refresh: false,
-        flashError: false
-    }
-
     handleChange = async (event) => {
         const attribute = event.target.name
         const updateUser = { ...this.state.user }

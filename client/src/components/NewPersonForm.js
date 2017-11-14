@@ -1,13 +1,113 @@
 import React, { Component } from 'react';
+import axios from 'axios'
+import { Redirect, Link, withRouter } from 'react-router-dom'
+import TextField from "material-ui/TextField"
+import FlatButton from 'material-ui/FlatButton';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+
 
 class NewPersonForm extends Component {
+    state = {
+        person: {},
+        refresh: false,
+        newPersonFlashError: false,
+    }
+    handleChange = async (event) => {
+        const attribute = event.target.name
+        const updatePerson  = { ...this.state.person }
+        updatePerson[attribute] = event.target.value
+        this.setState({ person: updatePerson })
+        console.log(this.state.person)
+    }
+    handleSubmit = async (event) => {
+        event.preventDefault()
+        try {
+            console.log(1)
+            const userId = this.props.match.params.userId 
+            console.log(userId)
+            const response = await axios.post(`/api/users/${userId}/people`, {
+                "person": this.state.person
+            })
+            console.log(response)
+            this.setState({ refresh: true, person: response.data })
+        } catch (error) {
+            this.setState({ newPersonFlashError: true })
+            console.log(this.state.newPersonFlashError)
+        }
+    }
     render() {
+        if (this.state.refresh) {
+            const userId = this.props.match.params.userId                        
+            return <Redirect to={`/users/${userId}/people`} />
+        }
+        if (this.state.newPersonFlashError) {
+            let div = document.getElementById("newPersonFlash")
+            div.style.display = "block"
+        }
         return (
-            <div>
-                
+            <div style={{ margin: "10px" }}>
+                <h1>New Person!</h1>
+                <div id="newPersonFlash" style={{ color: "red", display: "none" }}>
+                <p>Your 'new person' form was either incomplete or incorrect. You have to at least have a nickname for them.</p>
+                <p>If you don't you probably don't know them well enough to lend them your things...</p>
+                </div>
+                <form onSubmit={this.handleSubmit}>
+                    <div>
+                        <label htmlFor="nickname">Nickname: </label>
+                        <TextField
+                            onChange={this.handleChange} name="nickname"
+                            type="text" value={this.state.person.nickname}
+                        />
+                    </div>
+                    <div>
+                        <label htmlFor="first_name">First name: </label>
+                        <TextField
+                            onChange={this.handleChange} name="first_name"
+                            type="text" value={this.state.person.first_name}
+                        />
+                    </div>
+                    <div>
+                        <label htmlFor="last_name">Last name: </label>
+                        <TextField
+                            onChange={this.handleChange} name="last_name"
+                            type="text" value={this.state.person.last_name}
+                        />
+                    </div>
+                    <div>
+                        <label htmlFor="email">Email: </label>
+                        <TextField
+                            onChange={this.handleChange} name="email"
+                            type="text" value={this.state.person.email}
+                        />
+                    </div>
+                    <div>
+                        <label htmlFor="phone_number">Phone number: </label>
+                        <TextField
+                            onChange={this.handleChange} name="phone_number"
+                            type="text" value={this.state.person.phone_number}
+                        />
+                    </div>
+                    <div>
+                        <label htmlFor="picture">Picture Url: </label>
+                        <TextField
+                            onChange={this.handleChange} name="picture"
+                            type="text" value={this.state.person.picture}
+                        />
+                    </div>
+                    <div>
+                        <label htmlFor="notes">Notes: </label>
+                        <TextField
+                            onChange={this.handleChange} name="notes"
+                            type="text" value={this.state.person.notes}
+                        />
+                    </div>
+                    <FlatButton label="Submit" type="submit" style={{
+                        backgroundColor: "#72E0FF"
+                    }} />
+                </form>
             </div>
         );
     }
 }
 
-export default NewPersonForm;
+export default withRouter(NewPersonForm);
