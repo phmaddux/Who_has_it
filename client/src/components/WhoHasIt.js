@@ -4,12 +4,18 @@ import { Redirect, Link, withRouter } from 'react-router-dom'
 import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card'
 import FlatButton from 'material-ui/FlatButton'
 import NavBar from "./NavBar.js"
+import NewPersonForm from "./NewPersonForm.js"
 
 class WhoHasIt extends Component {
 
     state = {
-        people: []
+        people: [],
+        newPerson: {},
+        refresh: false,
+        newUser: false,
+        flashError: false
     }
+
     async componentWillMount() {
         try {
             const userId = this.props.match.params.userId            
@@ -20,23 +26,51 @@ class WhoHasIt extends Component {
             console.log(error)
         }
     }
+    newPerson = async (event) => {
+        event.preventDefault()
+        try {
+            this.setState({ newUser: true })
+        } catch (error) {
+            console.log("No more people")
+        }
+    }
     render() {
+        if (this.state.refresh) {
+            const userId = this.props.match.params.userId                        
+            return <Redirect to={`/users/${userId}/people`} />
+        }
+        if (this.state.newUser) {
+            let div = document.getElementById("newUser")
+            div.style.display = "block"
+        }
         return (
             <div>
                 <NavBar />
                 <span>
-                    <p>Buttons</p>
+                    <button onClick={this.newPerson}>New Person</button>
+                    <button>Buttons</button>
                 </span>
                 <div>
+                    <br></br>
+                    <div id="newUser" style={{display: "none" }}>
+                    New User!
+                    <NewPersonForm />
+                    </div>
+                <br></br>
                     {this.state.people.map((person, index) => {
                         return (
                             <Card style={{
                                 margin: "5px",
                             }}>
                                 <CardMedia
-                                    overlay={<FlatButton href={`/people/${person.id}`} title={person.name} />}>
-                                    <img src={person.picture} alt='${person.name} pic' />
+                                    overlay={<FlatButton href={`/people/${person.id}`} title={`${person.nickname}`} />}>
+                                    <img src={person.picture} alt=''/>
                                 </CardMedia>
+                                <CardText style={{
+                                     margin: "5px", 
+                                }}>
+                                    {person.nickname}
+                                </CardText>
                             </Card>
                         )
                     })}
