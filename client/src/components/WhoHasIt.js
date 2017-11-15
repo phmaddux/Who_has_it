@@ -24,12 +24,13 @@ class WhoHasIt extends Component {
         return (
             <div>
                 <NavBar />
-                <br></br>
+                <p>Seriously, who has all my stuff?</p>
                 <span>
                     <button>Buttons</button>
                     <button>Buttons</button>
                     <button>Buttons</button>
                 </span>
+                <br></br>
                 <br></br>
                 {this.state.people.map((person, index) => {
                     return (

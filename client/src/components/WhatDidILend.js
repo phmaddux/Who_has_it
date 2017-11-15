@@ -25,7 +25,7 @@ class WhatDidILend extends Component {
         return (
             <div>
                <NavBar />
-               <br></br>
+               <p>Okay, what's missing from my life?</p>
                 <span>
                     <button>Buttons</button>
                     <button>Buttons</button>
