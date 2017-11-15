@@ -1,7 +1,12 @@
 class Api::ItemsController < ApplicationController
     def index
-        @items = Person.find(params[:person_id]).items.reverse
-        render json: @items
+        if params[:id] == "id"
+            @items = User.find_by_id(params[:id]).items.reverse
+            render json: @items
+        elsif
+            @items = Person.find(params[:person_id]).items.reverse
+            render json: @items
+        end
     end
     def show
         @item = Item.find(params[:id])

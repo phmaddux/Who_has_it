@@ -11,8 +11,8 @@ class NavBar extends Component {
             <div>
                 <span>
                 <Link to={`/users/${userId}/people`}>Who Has It?</Link>
-                <Link to={'/'}>What did I lend?</Link>
-                <Link to={'/'}>Your Profile</Link>
+                <Link to={`/users/${userId}/items`}>What did I lend?</Link>
+                <Link to={`/users/${userId}`}>Your Profile</Link>
                 <Link to={'/'}>Log out</Link>
                 </span>
                 <br></br>
