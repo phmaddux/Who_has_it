@@ -5,22 +5,21 @@ import { Card, CardActions, CardHeader, CardMedia, CardTitle, CardText } from 'm
 import FlatButton from 'material-ui/FlatButton'
 import NavBar from "./NavBar.js"
 
-class WhoHasIt extends Component {
+class WhatDoTheyHave extends Component {
     state = {
-        people: [],
+       items: [],
     }
     async componentWillMount() {
         try {
-            const userId = this.props.match.params.userId
-            const response = await axios.get(`/api/users/${userId}/people`)
+            const personId = this.props.match.params.personId
+            const response = await axios.get(`/api/people/${personId}/items`)
             console.table(response.data)
-            this.setState({ people: response.data })
+            this.setState({ items: response.data })
         } catch (error) {
             console.log(error)
         }
     }
     render() {
-        const userId = this.props.match.params.userId
         return (
             <div>
                 <NavBar />
@@ -31,26 +30,30 @@ class WhoHasIt extends Component {
                     <button>Buttons</button>
                 </span>
                 <br></br>
-                {this.state.people.map((person, index) => {
+                {this.state.items.map((item, index) => {
                     return (
                         <Card style={{
-                            margin: "5px",
+                            margin: "10px",
                         }}>
                             <CardMedia
-                                overlay={<FlatButton href={`/users/${userId}/people/${person.id}/items`} title={`${person.nickname}`} />}>
-                                <img src={person.picture} alt='' />
+                            overlay={
+                                <FlatButton containerElement={
+                                    <Link to={`/people/${item.id}/items`} > Click HERE! </Link>
+                                } title={`${item.name}`}>Imma Button</FlatButton>
+                            }>
+                            <img src={item.picture} alt='' />
                             </CardMedia>
                             <CardText style={{
                                 margin: "5px",
                             }}>
-                                {person.nickname}
+                                {item.name}
                             </CardText>
                         </Card>
                     )
                 })}
-            </div >
+            </div>
         );
     }
 }
 
-export default withRouter(WhoHasIt);
+export default withRouter(WhatDoTheyHave);

@@ -110,7 +110,7 @@ Item.create({
 })
 Item.create({
     name: "",
-    picture: "****",
+    picture: ""
     returned: false,
     condition_outgoing: "",
     condition_returned: "",
