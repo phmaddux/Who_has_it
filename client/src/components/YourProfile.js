@@ -6,18 +6,19 @@ import FlatButton from 'material-ui/FlatButton'
 import NavBar from "./NavBar.js"
 import Avatar from 'material-ui/Avatar';
 import ProfileCard from './ProfileCard.js'
+import TextField from "material-ui/TextField"
 
 class YourProfile extends Component {
     state = {
         user: {},
+        refresh: false,
+        editField: false,
+        editFlashError: false
     }
     async componentWillMount() {
         try {
-            console.log(1)
             const userId = this.props.match.params.userId
-            console.log(userId)
             const response = await axios.get(`/api/users/${userId}/`)
-            console.log(3)
             console.table(response.data)
             this.setState({ user: response.data })
             console.table(response.data)
@@ -25,18 +26,100 @@ class YourProfile extends Component {
             console.log(error)
         }
     }
+    handleChange = async (event) => {
+        const attribute = event.target.name
+        const updateUser = { ...this.state.user }
+        updateUser[attribute] = event.target.value
+        this.setState({ user: updateUser })
+        console.log(this.state.user)
+    }
+    handleSubmit = async (event) => {
+        event.preventDefault()
+        try {
+            console.log(1)
+            const userId = this.props.match.params.userId            
+            console.log(2)
+            const response = await axios.patch(`/api/users/${userId}`, {
+                "user": this.state.user
+            })
+            this.setState({ refresh: true, user: response.data })
+        } catch (error) {
+            this.setState({ editFlashError: true })
+            console.log(this.state.editFlashError)
+        }
+    }
+    openEditSubmit = async (event) => {
+        event.preventDefault()
+        try {
+            this.setState({ editField: true })
+        } catch (error) {
+            console.log(error)
+        }
+    }
     render() {
+        if (this.state.refresh) {
+            const userId = this.props.match.params.userId            
+            return <Redirect to={`/users/${userId}/people`} />
+        }
+
+        const editError = (
+            <div style={{ color: "red"}}>Your edit form was either incomplete or incorrect. Please fill out the required fields and try again.</div>            
+        )
+        const editForm = (
+            <div>
+                <form onSubmit={this.handleSubmit}>
+                    <div>
+                        <label htmlFor="username">Username:</label>
+                        <TextField
+                            onChange={this.handleChange} name="username"
+                            type="text" value={this.state.user.username}
+                        />
+                    </div>
+                    <div>
+                        <label htmlFor="email">Email:</label>
+                        <TextField
+                            onChange={this.handleChange} name="email"
+                            type="text" value={this.state.user.email}
+                        />
+                    </div>
+                    <div>
+                        <label htmlFor="password">Password</label>
+                        <TextField
+                            onChange={this.handleChange} name="password"
+                            type="text" value={this.state.user.password}
+                        />
+                    </div>
+                    <div>
+                        <label htmlFor="picture">Picture</label>
+                        <TextField
+                            onChange={this.handleChange} name="picture"
+                            type="text" value={this.state.user.picture}
+                        />
+                    </div>
+                    <FlatButton label="Submit" onClick={this.handleSubmit} style={{
+                        backgroundColor: "#72E0FF"
+                    }} />
+                </form>
+            </div>
+        )
+
         return (
             <div>
                 <NavBar />
                 <p>Your information</p>
+                <br></br>
+                <br></br>
+                <ProfileCard user={this.state.user} />
                 <span>
-                    <button>Edit</button>
-                    <button>Delete</button>
+                    <FlatButton label="Edit Profile" onClick={this.openEditSubmit} />
+                    <FlatButton label="Delete Profile" onClick={this.deleteSubmit} />
                 </span>
-                <br></br>
-                <br></br>
-                <ProfileCard user={this.state.user}/>
+                <div>
+                   { this.state.editFlashError ? editError : null }
+                </div>
+                <div>
+                    { this.state.editField ? editForm : null }
+                </div>
             </div >
         );
     }

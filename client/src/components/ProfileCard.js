@@ -12,12 +12,9 @@ const ProfileCard = (props) => (
             />
             <CardText>
                 <p>Email: {props.user.email}</p>
-            <CardActions>
-                <FlatButton label="Edit Profile" />
-                <FlatButton label="Delete Profile" />
-            </CardActions>
             </CardText>
             </Card>
+
     </div>
 );
 
