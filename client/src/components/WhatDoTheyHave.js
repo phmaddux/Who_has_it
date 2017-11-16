@@ -8,8 +8,8 @@ import StarBorder from 'material-ui/svg-icons/toggle/star-border';
 import { Card, CardActions, CardHeader, CardMedia, CardTitle, CardText } from 'material-ui/Card'
 import FlatButton from 'material-ui/FlatButton'
 import NavBar from "./NavBar.js"
-import PersonCard from './PersonCard'
-import SpecificItems from './SpecificItems'
+import PersonCard from './PersonCard.js'
+import SpecificItems from './SpecificItems.js'
 
 
 class WhatDoTheyHave extends Component {

@@ -8,7 +8,7 @@ class Api::UsersController < ApplicationController
             @user = User.find(params[:id])
             render json: @user
         elsif
-            @user = User.find_by_username(params[:id])
+            @user = User.find(params[:id])
             render json: @user
         end
     end

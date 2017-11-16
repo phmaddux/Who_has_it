@@ -4,6 +4,8 @@ import { Redirect, Link, withRouter } from 'react-router-dom'
 import { Card, CardActions, CardHeader, CardMedia, CardTitle, CardText } from 'material-ui/Card'
 import FlatButton from 'material-ui/FlatButton'
 import NavBar from "./NavBar.js"
+import Avatar from 'material-ui/Avatar';
+import ProfileCard from './ProfileCard.js'
 
 class YourProfile extends Component {
     state = {
@@ -11,8 +13,11 @@ class YourProfile extends Component {
     }
     async componentWillMount() {
         try {
+            console.log(1)
             const userId = this.props.match.params.userId
+            console.log(userId)
             const response = await axios.get(`/api/users/${userId}/`)
+            console.log(3)
             console.table(response.data)
             this.setState({ user: response.data })
             console.table(response.data)
@@ -24,27 +29,14 @@ class YourProfile extends Component {
         return (
             <div>
                 <NavBar />
-                <p>Seriously, who has all my stuff?</p>
+                <p>Your information</p>
                 <span>
                     <button>Edit</button>
                     <button>Delete</button>
-                    <button>Buttons</button>
                 </span>
                 <br></br>
                 <br></br>
-                <Card style={{
-                    margin: "5px",
-                }}>
-                    <CardMedia
-                        overlay={<FlatButton title={`${this.state.user.username}`} />}>
-                        <img src={this.state.user.picture} alt='' />
-                    </CardMedia>
-                    <CardText style={{
-                        margin: "5px",
-                    }}>
-                        {this.state.user.username}
-                    </CardText>
-                </Card>
+                <ProfileCard user={this.state.user}/>
             </div >
         );
     }

@@ -7,19 +7,14 @@ const PersonCard = (props) => (
     <div>
             <Card>
                 <CardHeader
-                    leftAvatar={
-                        <Avatar
-                            src={props.person.picture}
-                            size={60}
-                        />
-                    }
+                    avatar={props.person.picture}
                     title={props.person.nickname}
                     subtitle={props.person.notes}
                     actAsExpander={true}
                     showExpandableButton={true}
                 />
                 <CardText expandable={true}>
-                <p>{props.person.first_name} {props.person.last_name}</p>
+                <p>Name: {props.person.first_name} {props.person.last_name}</p>
                 <p>Email: {props.person.email} Phone: {props.person.phone}</p>
                     <CardActions>
                         <FlatButton label="Would I lend to them again?" />

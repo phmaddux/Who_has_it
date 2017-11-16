@@ -8,12 +8,7 @@ const SpecificItems = (props) => (
         {props.items.map((item, index) => (
             <Card>
                 <CardHeader
-                    leftAvatar={
-                        <Avatar
-                            src={item.picture}
-                            size={30}
-                        />
-                    }
+                    avatar={item.picture}
                     title={item.name}
                     subtitle={item.description}
                     actAsExpander={true}
@@ -22,7 +17,7 @@ const SpecificItems = (props) => (
                 <CardText expandable={true}>
                     <p>Outgoing Condition: {item.condition_outgoing}</p>
                     <p>Returned Condition: {item.condition_returned}</p>
-                    <p>Date lent: {item.created_at}</p>
+                    <p>Date Lent: {item.created_at}</p>
                     <CardActions>
                         <FlatButton label="returned" />
                         <FlatButton label="Edit" />
