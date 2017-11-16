@@ -1,9 +1,14 @@
 import React, { Component } from 'react';
 import axios from 'axios'
+import { GridList, GridTile } from 'material-ui/GridList';
+import IconButton from 'material-ui/IconButton';
+import Subheader from 'material-ui/Subheader';
+import StarBorder from 'material-ui/svg-icons/toggle/star-border';
 import { Redirect, Link, withRouter } from 'react-router-dom'
 import { Card, CardActions, CardHeader, CardMedia, CardTitle, CardText } from 'material-ui/Card'
 import FlatButton from 'material-ui/FlatButton'
 import NavBar from "./NavBar.js"
+import WhoGrid from "./WhoGrid.js"
 
 class WhoHasIt extends Component {
     state = {
@@ -32,23 +37,7 @@ class WhoHasIt extends Component {
                 </span>
                 <br></br>
                 <br></br>
-                {this.state.people.map((person, index) => {
-                    return (
-                        <Card style={{
-                            margin: "5px",
-                        }}>
-                            <CardMedia
-                                overlay={<FlatButton href={`/users/${userId}/people/${person.id}/items`} title={`${person.nickname}`} />}>
-                                <img src={person.picture} alt='' />
-                            </CardMedia>
-                            <CardText style={{
-                                margin: "5px",
-                            }}>
-                                {person.nickname}
-                            </CardText>
-                        </Card>
-                    )
-                })}
+               <WhoGrid people={this.state.people} userId={this.props.match.params.userId} />
             </div >
         );
     }

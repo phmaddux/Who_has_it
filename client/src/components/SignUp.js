@@ -13,7 +13,7 @@ class SignUp extends Component {
             password: "",
         },
         refresh: false,
-        FlashError: false
+        FlashError: false,
     }
     handleChange = async (event) => {
         const attribute = event.target.name
@@ -33,9 +33,7 @@ class SignUp extends Component {
             this.setState({ flashError: true })
             console.log(this.state.flashError)
         }
-
     }
-
     render() {
         if (this.state.refresh) {
             const userId = this.state.newUser.id;

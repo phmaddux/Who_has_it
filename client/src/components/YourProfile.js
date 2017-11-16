@@ -12,9 +12,10 @@ class YourProfile extends Component {
     async componentWillMount() {
         try {
             const userId = this.props.match.params.userId
-            const response = await axios.get(`/api/users/${userId}`)
+            const response = await axios.get(`/api/users/${userId}/`)
             console.table(response.data)
             this.setState({ user: response.data })
+            console.table(response.data)
         } catch (error) {
             console.log(error)
         }
@@ -35,7 +36,7 @@ class YourProfile extends Component {
                     margin: "5px",
                 }}>
                     <CardMedia
-                        overlay={<FlatButton href={`/`} title={`${this.state.user.username}`} />}>
+                        overlay={<FlatButton title={`${this.state.user.username}`} />}>
                         <img src={this.state.user.picture} alt='' />
                     </CardMedia>
                     <CardText style={{

@@ -1,13 +1,16 @@
 import React, { Component } from 'react';
 import axios from 'axios'
 import { Redirect, Link, withRouter } from 'react-router-dom'
-import {GridList, GridTile} from 'material-ui/GridList';
+import { GridList, GridTile } from 'material-ui/GridList';
 import IconButton from 'material-ui/IconButton';
 import Subheader from 'material-ui/Subheader';
 import StarBorder from 'material-ui/svg-icons/toggle/star-border';
 import { Card, CardActions, CardHeader, CardMedia, CardTitle, CardText } from 'material-ui/Card'
 import FlatButton from 'material-ui/FlatButton'
 import NavBar from "./NavBar.js"
+import PersonCard from './PersonCard'
+import SpecificItems from './SpecificItems'
+
 
 class WhatDoTheyHave extends Component {
     state = {
@@ -15,8 +18,8 @@ class WhatDoTheyHave extends Component {
         items: [],
     }
     async componentWillMount() {
-        try{
-            const personId = this.props.match.params.personId            
+        try {
+            const personId = this.props.match.params.personId
             const response = await axios.get(`/api/people/${personId}`)
             console.table(response.data)
             this.setState({ person: response.data })
@@ -35,7 +38,20 @@ class WhatDoTheyHave extends Component {
         }
     }
     render() {
-        const personId = this.props.match.params.personId        
+        const styles = {
+            root: {
+                display: 'flex',
+                flexWrap: 'wrap',
+                justifyContent: 'space-around',
+            },
+            gridList: {
+                width: 400,
+                height: 400,
+                overflowY: 'auto',
+                cols: 4,
+            },
+        };
+        const personId = this.props.match.params.personId
         return (
             <div>
                 <NavBar />
@@ -47,26 +63,9 @@ class WhatDoTheyHave extends Component {
                 </span>
                 <br></br>
                 <br></br>
-                {this.state.items.map((item, index) => {
-                    return (
-                        <GridList style={{
-                            
-                        }}>
-                            <GridTile
-                            key={item.picture}
-                            title={item.name}
-                            >
-                            <img src={item.picture} />
-                            {/* overlay={
-                                <FlatButton containerElement={
-                                    <Link to={`/people/${item.id}/items`} > Click HERE! </Link>
-                                } title={`${item.name}`}>Imma Button</FlatButton>
-                            }>
-                            <img src={item.picture} alt='' /> */}
-                            </GridTile>
-                        </GridList>
-                    )
-                })}
+                <PersonCard person={this.state.person} />
+                <br></br>
+                <SpecificItems items={this.state.person} />
             </div>
         );
     }

@@ -31,9 +31,9 @@ class LogIn extends Component {
             if (this.state.userCheck.password === this.state.user.password) {
                 this.setState({ refresh: true })
             }
+            else this.setState({ logInFlashError: true })
         } catch (error) {
-            this.setState({ logInFlashError: true })
-            console.log(this.state.logInFlashError)
+            console.log(error)
         }
     }
     render() {
@@ -48,7 +48,7 @@ class LogIn extends Component {
         return (
             <div style={{ margin: "10px" }}>
                 <h1>Log In</h1>
-                <div id="logInFlash" style={{ color: "red", display: "none" }}>Your Sign In was either incomplete or incorrect. Please fill out the required fields and try again.</div>
+                <div id="logInFlash" style={{ color: "red", display: "none" }}>Your Login In was either incomplete or incorrect. Please fill out the required fields and try again.</div>
                 <form onSubmit={this.logIn}>
                     <div>
                         <label htmlFor="username">Username: </label>

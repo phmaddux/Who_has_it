@@ -1,6 +1,7 @@
 class Api::PeopleController < ApplicationController
     def index
-        @people = User.find(params[:user_id]).people.reverse
+        puts 'route hit'
+        @people = User.find(params[:user_id]).people.distinct
         render json: @people
     end
     def show

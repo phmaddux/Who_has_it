@@ -8,6 +8,12 @@ hunter = User.create({
     password: "password",
     picture: "https://i.imgur.com/rfo9mY1.png",
 })      
+burns = User.create({
+    username: "Burns",
+    email: "placeholder@place.com",
+    password: "password",
+    picture: "https://i.imgur.com/rfo9mY1.png",
+})
 tommy = Person.create({
     nickname: "Tommy",
     first_name: "Tommy",
