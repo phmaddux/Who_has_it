@@ -19,15 +19,14 @@ class WhatDoTheyHave extends Component {
     }
     async componentWillMount() {
         try {
+            const userId = this.props.match.params.userId
             const personId = this.props.match.params.personId
-            const response = await axios.get(`/api/people/${personId}`)
+            const response = await axios.get(`/api/users/${userId}/people/${personId}/`)
             console.table(response.data)
             this.setState({ person: response.data })
         } catch (error) {
             console.log(error)
         }
-    }
-    async componentWillMount() {
         try {
             const personId = this.props.match.params.personId
             const response = await axios.get(`/api/people/${personId}/items`)
@@ -56,16 +55,12 @@ class WhatDoTheyHave extends Component {
             <div>
                 <NavBar />
                 <p>What exactly did I lend them? {this.state.person.nickname}</p>
-                <span>
-                    <button>Buttons</button>
-                    <button>Buttons</button>
-                    <button>Buttons</button>
-                </span>
                 <br></br>
-                <br></br>
+                <p>Person</p>
                 <PersonCard person={this.state.person} />
                 <br></br>
-                <SpecificItems items={this.state.person} />
+                <p>What have I lent them?</p>
+                <SpecificItems items={this.state.items} />
             </div>
         );
     }

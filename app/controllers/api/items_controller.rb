@@ -1,10 +1,10 @@
 class Api::ItemsController < ApplicationController
     def index
         if params[:person_id]
-            @items = Person.find(params[:person_id]).items.reverse
+            @items = Person.find(params[:person_id]).items
             render json: @items
         elsif params[:user_id]
-            @items = User.find(params[:user_id]).items.reverse
+            @items = User.find(params[:user_id]).items.
             render json: @items
         end
     end
