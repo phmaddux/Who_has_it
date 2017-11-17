@@ -5,7 +5,6 @@ import TextField from "material-ui/TextField"
 import FlatButton from 'material-ui/FlatButton';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
-
 class NewPersonForm extends Component {
     state = {
         person: {
@@ -48,8 +47,8 @@ class NewPersonForm extends Component {
         return (
             <div style={{ margin: "10px" }}>
                 <div id="newPersonFlash" style={{ color: "red", display: "none" }}>
-                <p>Your 'new person' form was either incomplete or incorrect. You have to at least have a nickname for them.</p>
-                <p>If you don't you probably don't know them well enough to lend them your things...</p>
+                <p>Your new person form was either incomplete or incorrect. You have to at least have a nickname, an item name, and a description.</p>
+                <p>If you don't, you probably don't know them well enough to lend them your things...</p>
                 </div>
                 <form onSubmit={this.handleSubmit}>
                     <div>
@@ -122,9 +121,11 @@ class NewPersonForm extends Component {
                             type="text" value={this.state.person.item.description}
                         />
                     </div>
+                    <div>
                     <FlatButton label="Submit" type="submit" style={{
                         backgroundColor: "#72E0FF"
                     }} />
+                    </div>
                 </form>
             </div>
         );

@@ -15,7 +15,9 @@ import TextField from "material-ui/TextField"
 
 class WhatDoTheyHave extends Component {
     state = {
-        person: {},
+        person: {
+            item: {},
+        },
         items: [],
         refresh: false,
         refresh2: false,
@@ -49,10 +51,10 @@ class WhatDoTheyHave extends Component {
         this.setState({ person: updatePerson })
         console.log(this.state.person)
     }
-    handleSubmit = async (event) => {
+    handleEditSubmit = async (event) => {
         event.preventDefault()
         try {
-            const personId = this.props.match.params.personId            
+            const personId = this.props.match.params.personId
             const response = await axios.patch(`/api/people/${personId}/`, {
                 "person": this.state.person
             })
@@ -70,32 +72,106 @@ class WhatDoTheyHave extends Component {
             console.log(error)
         }
     }
+    handleAddSubmit = async (event) => {
+        event.preventDefault()
+        try {
+            const personId = this.props.match.params.personId
+            const response = await axios.post(`/api/people/${personId}/items`, {
+                "item": this.state.person.items
+            })
+            this.setState({ refresh: true, items: response.data })
+        } catch (error) {
+            this.setState({ addFlashError: true })
+            console.log(this.state.addFlashError)
+        }
+    }
+    openAddSubmit = async (event) => {
+        event.preventDefault()
+        try {
+            this.setState({ addField: true })
+        } catch (error) {
+            console.log(error)
+        }
+    }
     deleteSubmit = async (event) => {
         event.preventDefault()
-        const userId = this.props.match.params.userId                    
-        if(window.confirm(`Are you sure you want to delete this person?`)) {
-            const personId = this.props.match.params.personId            
+        const userId = this.props.match.params.userId
+        if (window.confirm(`Are you sure you want to delete this person?`)) {
+            const personId = this.props.match.params.personId
             const response = await axios.delete(`/api/people/${personId}/`)
-            this.setState({ person: response.data , refresh2: true})
+            this.setState({ person: response.data, refresh2: true })
         }
     }
     render() {
         if (this.state.refresh) {
-            const userId = this.props.match.params.userId  
-            const personId = this.props.match.params.personId                        
-            return <Redirect to={`/users/${userId}/people/${personId}/items`} />
+            const userId = this.props.match.params.userId
+            const personId = this.props.match.params.personId
+            return <Redirect to={`/users/${userId}/people/`} />
         }
         if (this.state.refresh2) {
-            const userId = this.props.match.params.userId            
+            const userId = this.props.match.params.userId
             return <Redirect to={`/users/${userId}/people/`} />
         }
         const personId = this.props.match.params.personId
         const editError = (
-            <div style={{ color: "red"}}>Your edit form was either incomplete or incorrect. Please fill out the required fields and try again.</div>            
+            <div style={{ color: "red" }}>
+                <p>Your edit form was either incomplete or incorrect.</p>
+                <p>Please fill out the required fields and try again.</p>
+            </div>
+        )
+        const addError = (
+            <div style={{ color: "red" }}>
+                <p>Your add form was either incomplete or incorrect.</p>
+                <p>Please fill out the name and description and try again.</p>
+            </div>
+        )
+        const addForm = (
+            <div>
+                <form onSubmit={this.handleAddSubmit}>
+                    <div>
+                        <label htmlFor="name">Name:</label>
+                        <TextField
+                            onChange={this.handleChange} name="name"
+                            type="text" value={this.state.items.name}
+                        />
+                    </div>
+                    <div>
+                        <label htmlFor="picture">Picture Url:</label>
+                        <TextField
+                            onChange={this.handleChange} name="picture"
+                            type="text" value={this.state.items.picture}
+                        />
+                    </div>
+                    <div>
+                        <label htmlFor="condition_outgoing">Outgoing Condition:</label>
+                        <TextField
+                            onChange={this.handleChange} name="condition_outgoing"
+                            type="text" value={this.state.items.condition_outgoing}
+                        />
+                    </div>
+                    <div>
+                        <label htmlFor="condition_returned">Returned Condition:</label>
+                        <TextField
+                            onChange={this.handleChange} name="condition_returned"
+                            type="text" value={this.state.items.condition_returned}
+                        />
+                    </div>
+                    <div>
+                        <label htmlFor="description">Item Description:</label>
+                        <TextField
+                            onChange={this.handleChange} name="description"
+                            type="text" value={this.state.items.description}
+                        />
+                    </div>
+                    <FlatButton label="Submit" onClick={this.handleAddSubmit} style={{
+                        backgroundColor: "#72E0FF"
+                    }} />
+                </form>
+            </div>
         )
         const editForm = (
             <div>
-                <form onSubmit={this.handleSubmit}>
+                <form onSubmit={this.handleEditSubmit}>
                     <div>
                         <label htmlFor="Nickname">Nickname:</label>
                         <TextField
@@ -104,48 +180,48 @@ class WhatDoTheyHave extends Component {
                         />
                     </div>
                     <div>
-                    <label htmlFor="first_name">First name: </label>
-                    <TextField
-                        onChange={this.handleChange} name="first_name"
-                        type="text" value={this.state.person.first_name}
-                    />
-                </div>
-                <div>
-                    <label htmlFor="last_name">Last name: </label>
-                    <TextField
-                        onChange={this.handleChange} name="last_name"
-                        type="text" value={this.state.person.last_name}
-                    />
-                </div>
-                <div>
-                    <label htmlFor="email">Email: </label>
-                    <TextField
-                        onChange={this.handleChange} name="email"
-                        type="text" value={this.state.person.email}
-                    />
-                </div>
-                <div>
-                    <label htmlFor="phone_number">Phone number: </label>
-                    <TextField
-                        onChange={this.handleChange} name="phone_number"
-                        type="text" value={this.state.person.phone_number}
-                    />
-                </div>
-                <div>
-                    <label htmlFor="picture">Picture Url: </label>
-                    <TextField
-                        onChange={this.handleChange} name="picture"
-                        type="text" value={this.state.person.picture}
-                    />
-                </div>
-                <div>
-                    <label htmlFor="notes">Notes: </label>
-                    <TextField
-                        onChange={this.handleChange} name="notes"
-                        type="text" value={this.state.person.notes}
-                    />
-                </div>
-                    <FlatButton label="Submit" onClick={this.handleSubmit} style={{
+                        <label htmlFor="first_name">First name: </label>
+                        <TextField
+                            onChange={this.handleChange} name="first_name"
+                            type="text" value={this.state.person.first_name}
+                        />
+                    </div>
+                    <div>
+                        <label htmlFor="last_name">Last name: </label>
+                        <TextField
+                            onChange={this.handleChange} name="last_name"
+                            type="text" value={this.state.person.last_name}
+                        />
+                    </div>
+                    <div>
+                        <label htmlFor="email">Email: </label>
+                        <TextField
+                            onChange={this.handleChange} name="email"
+                            type="text" value={this.state.person.email}
+                        />
+                    </div>
+                    <div>
+                        <label htmlFor="phone_number">Phone number: </label>
+                        <TextField
+                            onChange={this.handleChange} name="phone_number"
+                            type="text" value={this.state.person.phone_number}
+                        />
+                    </div>
+                    <div>
+                        <label htmlFor="picture">Picture Url: </label>
+                        <TextField
+                            onChange={this.handleChange} name="picture"
+                            type="text" value={this.state.person.picture}
+                        />
+                    </div>
+                    <div>
+                        <label htmlFor="notes">Notes: </label>
+                        <TextField
+                            onChange={this.handleChange} name="notes"
+                            type="text" value={this.state.person.notes}
+                        />
+                    </div>
+                    <FlatButton label="Submit" onClick={this.handleEditSubmit} style={{
                         backgroundColor: "#72E0FF"
                     }} />
                 </form>
@@ -156,17 +232,22 @@ class WhatDoTheyHave extends Component {
                 <NavBar />
                 <p>What exactly did I lend {this.state.person.nickname}?</p>
                 <PersonCard person={this.state.person} />
-                        <FlatButton label="Would I lend to them again?" />
-                        <FlatButton label="Edit" onClick={this.openEditSubmit}/>
-                        <FlatButton label="Delete" onClick={this.deleteSubmit}/>
-                        <FlatButton label="Add Item" />
+                <FlatButton label="Would I lend to them again?" />
+                <FlatButton label="Edit" onClick={this.openEditSubmit} />
+                <FlatButton label="Add Item" onClick={this.openAddSubmit} />
+                <FlatButton label="Delete" onClick={this.deleteSubmit} />
                 <div>
-                   { this.state.editFlashError ? editError : null }
+                    {this.state.editFlashError ? editError : null}
                 </div>
                 <div>
-                    { this.state.editField ? editForm : null }
+                    {this.state.editField ? editForm : null}
                 </div>
-
+                <div>
+                    {this.state.addFlashError ? addError : null}
+                </div>
+                <div>
+                    {this.state.addField ? addForm : null}
+                </div>
                 <p>What have I lent them?</p>
                 <SpecificItems items={this.state.items} />
             </div>

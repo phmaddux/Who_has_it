@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import styled from 'styled-components'
 import { Link, withRouter } from 'react-router-dom'
+import styled from 'styled-components'
 
 const StyledNavBar = styled.div` 
 display: flex;
