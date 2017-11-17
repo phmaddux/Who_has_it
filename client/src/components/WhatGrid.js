@@ -1,9 +1,6 @@
 import React from 'react';
 import {GridList, GridTile} from 'material-ui/GridList';
-import IconButton from 'material-ui/IconButton';
-import Subheader from 'material-ui/Subheader';
-import StarBorder from 'material-ui/svg-icons/toggle/star-border';
-import { Redirect, Link, withRouter } from 'react-router-dom'
+import { Link, withRouter } from 'react-router-dom'
 
 const styles = {
   root: {
@@ -34,7 +31,7 @@ const WhatGrid = (props) => (
           <Link to={`/users/${props.userId}/people/${item.person_id}/items`} />
           }
         >
-          <img src={item.picture} />
+          <img src={item.picture} alt="" />
         </GridTile>
       ))}
     </GridList>

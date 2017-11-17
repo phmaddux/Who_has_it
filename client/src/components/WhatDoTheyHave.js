@@ -1,11 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios'
-import { Redirect, Link, withRouter } from 'react-router-dom'
-import { GridList, GridTile } from 'material-ui/GridList';
-import IconButton from 'material-ui/IconButton';
-import Subheader from 'material-ui/Subheader';
-import StarBorder from 'material-ui/svg-icons/toggle/star-border';
-import { Card, CardActions, CardHeader, CardMedia, CardTitle, CardText } from 'material-ui/Card'
+import { Redirect, withRouter } from 'react-router-dom'
 import FlatButton from 'material-ui/FlatButton'
 import NavBar from "./NavBar.js"
 import PersonCard from './PersonCard.js'

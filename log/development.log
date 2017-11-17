@@ -37462,3 +37462,394 @@ Processing by Api::ItemsController#index as HTML
 Completed 200 OK in 10ms (Views: 7.2ms | ActiveRecord: 0.8ms)
 
 
+Started GET "/api/users/57/people" for 127.0.0.1 at 2017-11-17 12:38:59 -0500
+  [1m[35m (2.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::PeopleController#index as HTML
+  Parameters: {"user_id"=>"57"}
+  [1m[36mUser Load (6.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 57], ["LIMIT", 1]]
+  [1m[36mPerson Load (3.3ms)[0m  [1m[34mSELECT DISTINCT "people".* FROM "people" INNER JOIN "items" ON "people"."id" = "items"."person_id" WHERE "items"."user_id" = $1[0m  [["user_id", 57]]
+Completed 200 OK in 227ms (Views: 63.3ms | ActiveRecord: 33.0ms)
+
+
+Started GET "/api/users/57/people/118/" for 127.0.0.1 at 2017-11-17 12:39:02 -0500
+Processing by Api::PeopleController#show as HTML
+  Parameters: {"user_id"=>"57", "id"=>"118"}
+  [1m[36mPerson Load (1.8ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = $1 LIMIT $2[0m  [["id", 118], ["LIMIT", 1]]
+Completed 200 OK in 61ms (Views: 4.2ms | ActiveRecord: 31.1ms)
+
+
+Started GET "/api/people/118/items" for 127.0.0.1 at 2017-11-17 12:39:02 -0500
+Processing by Api::ItemsController#index as HTML
+  Parameters: {"person_id"=>"118"}
+  [1m[36mPerson Load (0.7ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = $1 LIMIT $2[0m  [["id", 118], ["LIMIT", 1]]
+  [1m[36mItem Load (1.0ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."person_id" = $1[0m  [["person_id", 118]]
+Completed 200 OK in 58ms (Views: 45.8ms | ActiveRecord: 9.2ms)
+
+
+Started GET "/api/users/57/people/118/" for 127.0.0.1 at 2017-11-17 12:39:34 -0500
+Processing by Api::PeopleController#show as HTML
+  Parameters: {"user_id"=>"57", "id"=>"118"}
+  [1m[36mPerson Load (0.6ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = $1 LIMIT $2[0m  [["id", 118], ["LIMIT", 1]]
+Completed 200 OK in 4ms (Views: 1.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/people/118/items" for 127.0.0.1 at 2017-11-17 12:39:35 -0500
+Processing by Api::ItemsController#index as HTML
+  Parameters: {"person_id"=>"118"}
+  [1m[36mPerson Load (0.6ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = $1 LIMIT $2[0m  [["id", 118], ["LIMIT", 1]]
+  [1m[36mItem Load (0.6ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."person_id" = $1[0m  [["person_id", 118]]
+Completed 200 OK in 15ms (Views: 10.9ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/api/users/57/people/118/" for 127.0.0.1 at 2017-11-17 12:39:50 -0500
+Processing by Api::PeopleController#show as HTML
+  Parameters: {"user_id"=>"57", "id"=>"118"}
+  [1m[36mPerson Load (0.6ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = $1 LIMIT $2[0m  [["id", 118], ["LIMIT", 1]]
+Completed 200 OK in 7ms (Views: 1.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/people/118/items" for 127.0.0.1 at 2017-11-17 12:39:51 -0500
+Processing by Api::ItemsController#index as HTML
+  Parameters: {"person_id"=>"118"}
+  [1m[36mPerson Load (2.9ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = $1 LIMIT $2[0m  [["id", 118], ["LIMIT", 1]]
+  [1m[36mItem Load (0.6ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."person_id" = $1[0m  [["person_id", 118]]
+Completed 200 OK in 21ms (Views: 12.7ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/api/users/57/people/118/" for 127.0.0.1 at 2017-11-17 12:39:56 -0500
+Processing by Api::PeopleController#show as HTML
+  Parameters: {"user_id"=>"57", "id"=>"118"}
+  [1m[36mPerson Load (0.9ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = $1 LIMIT $2[0m  [["id", 118], ["LIMIT", 1]]
+Completed 200 OK in 4ms (Views: 1.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/api/people/118/items" for 127.0.0.1 at 2017-11-17 12:39:57 -0500
+Processing by Api::ItemsController#index as HTML
+  Parameters: {"person_id"=>"118"}
+  [1m[36mPerson Load (0.7ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = $1 LIMIT $2[0m  [["id", 118], ["LIMIT", 1]]
+  [1m[36mItem Load (0.9ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."person_id" = $1[0m  [["person_id", 118]]
+Completed 200 OK in 16ms (Views: 11.5ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/api/users/57/people/118/" for 127.0.0.1 at 2017-11-17 12:43:55 -0500
+Processing by Api::PeopleController#show as HTML
+  Parameters: {"user_id"=>"57", "id"=>"118"}
+  [1m[36mPerson Load (2.6ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = $1 LIMIT $2[0m  [["id", 118], ["LIMIT", 1]]
+Completed 200 OK in 7ms (Views: 1.8ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/api/people/118/items" for 127.0.0.1 at 2017-11-17 12:43:56 -0500
+Processing by Api::ItemsController#index as HTML
+  Parameters: {"person_id"=>"118"}
+  [1m[36mPerson Load (0.5ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = $1 LIMIT $2[0m  [["id", 118], ["LIMIT", 1]]
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."person_id" = $1[0m  [["person_id", 118]]
+Completed 200 OK in 19ms (Views: 14.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/api/users/57/people/118/" for 127.0.0.1 at 2017-11-17 12:44:15 -0500
+Processing by Api::PeopleController#show as HTML
+  Parameters: {"user_id"=>"57", "id"=>"118"}
+  [1m[36mPerson Load (0.9ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = $1 LIMIT $2[0m  [["id", 118], ["LIMIT", 1]]
+Completed 200 OK in 5ms (Views: 1.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/api/people/118/items" for 127.0.0.1 at 2017-11-17 12:44:16 -0500
+Processing by Api::ItemsController#index as HTML
+  Parameters: {"person_id"=>"118"}
+  [1m[36mPerson Load (0.5ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = $1 LIMIT $2[0m  [["id", 118], ["LIMIT", 1]]
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."person_id" = $1[0m  [["person_id", 118]]
+Completed 200 OK in 16ms (Views: 12.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/api/users/57/people/118/" for 127.0.0.1 at 2017-11-17 12:44:23 -0500
+Processing by Api::PeopleController#show as HTML
+  Parameters: {"user_id"=>"57", "id"=>"118"}
+  [1m[36mPerson Load (0.3ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = $1 LIMIT $2[0m  [["id", 118], ["LIMIT", 1]]
+Completed 200 OK in 5ms (Views: 2.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/people/118/items" for 127.0.0.1 at 2017-11-17 12:44:24 -0500
+Processing by Api::ItemsController#index as HTML
+  Parameters: {"person_id"=>"118"}
+  [1m[36mPerson Load (0.5ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = $1 LIMIT $2[0m  [["id", 118], ["LIMIT", 1]]
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."person_id" = $1[0m  [["person_id", 118]]
+Completed 200 OK in 22ms (Views: 18.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/api/users/57/people/118/" for 127.0.0.1 at 2017-11-17 12:44:28 -0500
+Processing by Api::PeopleController#show as HTML
+  Parameters: {"user_id"=>"57", "id"=>"118"}
+  [1m[36mPerson Load (0.3ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = $1 LIMIT $2[0m  [["id", 118], ["LIMIT", 1]]
+Completed 200 OK in 5ms (Views: 1.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/people/118/items" for 127.0.0.1 at 2017-11-17 12:44:28 -0500
+Processing by Api::ItemsController#index as HTML
+  Parameters: {"person_id"=>"118"}
+  [1m[36mPerson Load (0.4ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = $1 LIMIT $2[0m  [["id", 118], ["LIMIT", 1]]
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."person_id" = $1[0m  [["person_id", 118]]
+Completed 200 OK in 16ms (Views: 11.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/api/users/57/people/118/" for 127.0.0.1 at 2017-11-17 12:44:35 -0500
+Processing by Api::PeopleController#show as HTML
+  Parameters: {"user_id"=>"57", "id"=>"118"}
+  [1m[36mPerson Load (0.4ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = $1 LIMIT $2[0m  [["id", 118], ["LIMIT", 1]]
+Completed 200 OK in 5ms (Views: 2.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/people/118/items" for 127.0.0.1 at 2017-11-17 12:44:36 -0500
+Processing by Api::ItemsController#index as HTML
+  Parameters: {"person_id"=>"118"}
+  [1m[36mPerson Load (0.4ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = $1 LIMIT $2[0m  [["id", 118], ["LIMIT", 1]]
+  [1m[36mItem Load (0.8ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."person_id" = $1[0m  [["person_id", 118]]
+Completed 200 OK in 14ms (Views: 10.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/api/users/57/people/118/" for 127.0.0.1 at 2017-11-17 12:44:54 -0500
+Processing by Api::PeopleController#show as HTML
+  Parameters: {"user_id"=>"57", "id"=>"118"}
+  [1m[36mPerson Load (0.3ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = $1 LIMIT $2[0m  [["id", 118], ["LIMIT", 1]]
+Completed 200 OK in 6ms (Views: 2.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/people/118/items" for 127.0.0.1 at 2017-11-17 12:44:54 -0500
+Processing by Api::ItemsController#index as HTML
+  Parameters: {"person_id"=>"118"}
+  [1m[36mPerson Load (0.4ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = $1 LIMIT $2[0m  [["id", 118], ["LIMIT", 1]]
+  [1m[36mItem Load (0.8ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."person_id" = $1[0m  [["person_id", 118]]
+Completed 200 OK in 12ms (Views: 8.8ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/api/users/57/people/118/" for 127.0.0.1 at 2017-11-17 12:45:20 -0500
+Processing by Api::PeopleController#show as HTML
+  Parameters: {"user_id"=>"57", "id"=>"118"}
+  [1m[36mPerson Load (0.3ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = $1 LIMIT $2[0m  [["id", 118], ["LIMIT", 1]]
+Completed 200 OK in 4ms (Views: 2.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/people/118/items" for 127.0.0.1 at 2017-11-17 12:45:21 -0500
+Processing by Api::ItemsController#index as HTML
+  Parameters: {"person_id"=>"118"}
+  [1m[36mPerson Load (0.3ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = $1 LIMIT $2[0m  [["id", 118], ["LIMIT", 1]]
+  [1m[36mItem Load (0.9ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."person_id" = $1[0m  [["person_id", 118]]
+Completed 200 OK in 17ms (Views: 12.3ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/api/users/57/people/118/" for 127.0.0.1 at 2017-11-17 12:54:22 -0500
+Processing by Api::PeopleController#show as HTML
+  Parameters: {"user_id"=>"57", "id"=>"118"}
+  [1m[36mPerson Load (0.4ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = $1 LIMIT $2[0m  [["id", 118], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 1.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/people/118/items" for 127.0.0.1 at 2017-11-17 12:54:22 -0500
+Processing by Api::ItemsController#index as HTML
+  Parameters: {"person_id"=>"118"}
+  [1m[36mPerson Load (0.3ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = $1 LIMIT $2[0m  [["id", 118], ["LIMIT", 1]]
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."person_id" = $1[0m  [["person_id", 118]]
+Completed 200 OK in 10ms (Views: 7.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/users/57/people/118/" for 127.0.0.1 at 2017-11-17 12:54:28 -0500
+Processing by Api::PeopleController#show as HTML
+  Parameters: {"user_id"=>"57", "id"=>"118"}
+  [1m[36mPerson Load (0.4ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = $1 LIMIT $2[0m  [["id", 118], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/people/118/items" for 127.0.0.1 at 2017-11-17 12:54:30 -0500
+Processing by Api::ItemsController#index as HTML
+  Parameters: {"person_id"=>"118"}
+  [1m[36mPerson Load (0.4ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = $1 LIMIT $2[0m  [["id", 118], ["LIMIT", 1]]
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."person_id" = $1[0m  [["person_id", 118]]
+Completed 200 OK in 12ms (Views: 8.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/users/57/people/118/" for 127.0.0.1 at 2017-11-17 12:54:31 -0500
+Processing by Api::PeopleController#show as HTML
+  Parameters: {"user_id"=>"57", "id"=>"118"}
+  [1m[36mPerson Load (0.4ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = $1 LIMIT $2[0m  [["id", 118], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/people/118/items" for 127.0.0.1 at 2017-11-17 12:54:31 -0500
+Processing by Api::ItemsController#index as HTML
+  Parameters: {"person_id"=>"118"}
+  [1m[36mPerson Load (0.3ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = $1 LIMIT $2[0m  [["id", 118], ["LIMIT", 1]]
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."person_id" = $1[0m  [["person_id", 118]]
+Completed 200 OK in 11ms (Views: 8.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/users/57/people/118/" for 127.0.0.1 at 2017-11-17 12:54:44 -0500
+Processing by Api::PeopleController#show as HTML
+  Parameters: {"user_id"=>"57", "id"=>"118"}
+  [1m[36mPerson Load (0.3ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = $1 LIMIT $2[0m  [["id", 118], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 1.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/people/118/items" for 127.0.0.1 at 2017-11-17 12:54:44 -0500
+Processing by Api::ItemsController#index as HTML
+  Parameters: {"person_id"=>"118"}
+  [1m[36mPerson Load (0.3ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = $1 LIMIT $2[0m  [["id", 118], ["LIMIT", 1]]
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."person_id" = $1[0m  [["person_id", 118]]
+Completed 200 OK in 10ms (Views: 7.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/users/57/people/118/" for 127.0.0.1 at 2017-11-17 12:56:13 -0500
+Processing by Api::PeopleController#show as HTML
+  Parameters: {"user_id"=>"57", "id"=>"118"}
+  [1m[36mPerson Load (0.7ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = $1 LIMIT $2[0m  [["id", 118], ["LIMIT", 1]]
+Completed 200 OK in 5ms (Views: 1.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/users/57/people/118/" for 127.0.0.1 at 2017-11-17 12:56:14 -0500
+Processing by Api::PeopleController#show as HTML
+  Parameters: {"user_id"=>"57", "id"=>"118"}
+  [1m[36mPerson Load (0.3ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = $1 LIMIT $2[0m  [["id", 118], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 1.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/people/118/items" for 127.0.0.1 at 2017-11-17 12:56:14 -0500
+Processing by Api::ItemsController#index as HTML
+  Parameters: {"person_id"=>"118"}
+  [1m[36mPerson Load (0.3ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = $1 LIMIT $2[0m  [["id", 118], ["LIMIT", 1]]
+  [1m[36mItem Load (0.9ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."person_id" = $1[0m  [["person_id", 118]]
+Completed 200 OK in 10ms (Views: 7.6ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/api/users/57/people/118/" for 127.0.0.1 at 2017-11-17 12:56:39 -0500
+Processing by Api::PeopleController#show as HTML
+  Parameters: {"user_id"=>"57", "id"=>"118"}
+  [1m[36mPerson Load (0.4ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = $1 LIMIT $2[0m  [["id", 118], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 1.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/people/118/items" for 127.0.0.1 at 2017-11-17 12:56:39 -0500
+Processing by Api::ItemsController#index as HTML
+  Parameters: {"person_id"=>"118"}
+  [1m[36mPerson Load (0.3ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = $1 LIMIT $2[0m  [["id", 118], ["LIMIT", 1]]
+  [1m[36mItem Load (2.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."person_id" = $1[0m  [["person_id", 118]]
+Completed 200 OK in 12ms (Views: 7.8ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/api/users/57/people/118/" for 127.0.0.1 at 2017-11-17 12:56:44 -0500
+Processing by Api::PeopleController#show as HTML
+  Parameters: {"user_id"=>"57", "id"=>"118"}
+  [1m[36mPerson Load (0.4ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = $1 LIMIT $2[0m  [["id", 118], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 1.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/people/118/items" for 127.0.0.1 at 2017-11-17 12:56:45 -0500
+Processing by Api::ItemsController#index as HTML
+  Parameters: {"person_id"=>"118"}
+  [1m[36mPerson Load (0.4ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = $1 LIMIT $2[0m  [["id", 118], ["LIMIT", 1]]
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."person_id" = $1[0m  [["person_id", 118]]
+Completed 200 OK in 11ms (Views: 8.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/api/users/57/people/118/" for 127.0.0.1 at 2017-11-17 12:57:18 -0500
+Processing by Api::PeopleController#show as HTML
+  Parameters: {"user_id"=>"57", "id"=>"118"}
+  [1m[36mPerson Load (0.3ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = $1 LIMIT $2[0m  [["id", 118], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 1.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/people/118/items" for 127.0.0.1 at 2017-11-17 12:57:20 -0500
+Processing by Api::ItemsController#index as HTML
+  Parameters: {"person_id"=>"118"}
+  [1m[36mPerson Load (0.6ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = $1 LIMIT $2[0m  [["id", 118], ["LIMIT", 1]]
+  [1m[36mItem Load (1.0ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."person_id" = $1[0m  [["person_id", 118]]
+Completed 200 OK in 12ms (Views: 8.6ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/api/users/57/people/118/" for 127.0.0.1 at 2017-11-17 12:57:21 -0500
+Processing by Api::PeopleController#show as HTML
+  Parameters: {"user_id"=>"57", "id"=>"118"}
+  [1m[36mPerson Load (1.6ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = $1 LIMIT $2[0m  [["id", 118], ["LIMIT", 1]]
+Completed 200 OK in 4ms (Views: 1.0ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/api/people/118/items" for 127.0.0.1 at 2017-11-17 12:57:21 -0500
+Processing by Api::ItemsController#index as HTML
+  Parameters: {"person_id"=>"118"}
+  [1m[36mPerson Load (0.4ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = $1 LIMIT $2[0m  [["id", 118], ["LIMIT", 1]]
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."person_id" = $1[0m  [["person_id", 118]]
+Completed 200 OK in 10ms (Views: 7.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/users/57/people/118/" for 127.0.0.1 at 2017-11-17 12:57:35 -0500
+Processing by Api::PeopleController#show as HTML
+  Parameters: {"user_id"=>"57", "id"=>"118"}
+  [1m[36mPerson Load (0.4ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = $1 LIMIT $2[0m  [["id", 118], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 1.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/people/118/items" for 127.0.0.1 at 2017-11-17 12:57:36 -0500
+Processing by Api::ItemsController#index as HTML
+  Parameters: {"person_id"=>"118"}
+  [1m[36mPerson Load (0.6ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = $1 LIMIT $2[0m  [["id", 118], ["LIMIT", 1]]
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."person_id" = $1[0m  [["person_id", 118]]
+Completed 200 OK in 11ms (Views: 7.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/api/users/57/people/118/" for 127.0.0.1 at 2017-11-17 12:57:43 -0500
+Processing by Api::PeopleController#show as HTML
+  Parameters: {"user_id"=>"57", "id"=>"118"}
+  [1m[36mPerson Load (0.3ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = $1 LIMIT $2[0m  [["id", 118], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 1.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/people/118/items" for 127.0.0.1 at 2017-11-17 12:57:43 -0500
+Processing by Api::ItemsController#index as HTML
+  Parameters: {"person_id"=>"118"}
+  [1m[36mPerson Load (0.3ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = $1 LIMIT $2[0m  [["id", 118], ["LIMIT", 1]]
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."person_id" = $1[0m  [["person_id", 118]]
+Completed 200 OK in 11ms (Views: 8.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/users/57/people/118/" for 127.0.0.1 at 2017-11-17 12:57:56 -0500
+Processing by Api::PeopleController#show as HTML
+  Parameters: {"user_id"=>"57", "id"=>"118"}
+  [1m[36mPerson Load (0.3ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = $1 LIMIT $2[0m  [["id", 118], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 1.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/people/118/items" for 127.0.0.1 at 2017-11-17 12:57:56 -0500
+Processing by Api::ItemsController#index as HTML
+  Parameters: {"person_id"=>"118"}
+  [1m[36mPerson Load (0.3ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = $1 LIMIT $2[0m  [["id", 118], ["LIMIT", 1]]
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."person_id" = $1[0m  [["person_id", 118]]
+Completed 200 OK in 13ms (Views: 10.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/users/57/people/118/" for 127.0.0.1 at 2017-11-17 12:58:07 -0500
+Processing by Api::PeopleController#show as HTML
+  Parameters: {"user_id"=>"57", "id"=>"118"}
+  [1m[36mPerson Load (0.3ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = $1 LIMIT $2[0m  [["id", 118], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/people/118/items" for 127.0.0.1 at 2017-11-17 12:58:08 -0500
+Processing by Api::ItemsController#index as HTML
+  Parameters: {"person_id"=>"118"}
+  [1m[36mPerson Load (0.3ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = $1 LIMIT $2[0m  [["id", 118], ["LIMIT", 1]]
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."person_id" = $1[0m  [["person_id", 118]]
+Completed 200 OK in 9ms (Views: 7.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/users/57/people/118/" for 127.0.0.1 at 2017-11-17 12:58:51 -0500
+Processing by Api::PeopleController#show as HTML
+  Parameters: {"user_id"=>"57", "id"=>"118"}
+  [1m[36mPerson Load (0.3ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = $1 LIMIT $2[0m  [["id", 118], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 1.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/people/118/items" for 127.0.0.1 at 2017-11-17 12:58:52 -0500
+Processing by Api::ItemsController#index as HTML
+  Parameters: {"person_id"=>"118"}
+  [1m[36mPerson Load (0.3ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = $1 LIMIT $2[0m  [["id", 118], ["LIMIT", 1]]
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."person_id" = $1[0m  [["person_id", 118]]
+Completed 200 OK in 10ms (Views: 7.8ms | ActiveRecord: 0.7ms)
+
+
