@@ -1,7 +1,5 @@
 import React from 'react';
-import { Card, CardActions, CardHeader, CardText } from 'material-ui/Card';
-import FlatButton from 'material-ui/FlatButton';
-import Avatar from 'material-ui/Avatar';
+import { Card, CardHeader, CardText } from 'material-ui/Card';
 
 const PersonCard = (props) => (
     <div>

@@ -34,11 +34,9 @@ class WhoHasIt extends Component {
         }
     }
     render() {
-        const userId = this.props.match.params.userId
         const newPerson = (
             <NewPersonForm />
         )
-
         return (
             <div>
                 <NavBar />

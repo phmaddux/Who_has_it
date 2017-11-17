@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios'
-import { Redirect, Link, withRouter } from 'react-router-dom'
-import { Card, CardActions, CardHeader, CardMedia, CardTitle, CardText } from 'material-ui/Card'
-import FlatButton from 'material-ui/FlatButton'
+import { withRouter } from 'react-router-dom'
 import NavBar from "./NavBar.js"
-import NewPersonForm from "./NewPersonForm.js"
 import WhatGrid from "./WhatGrid.js"
 import styled from 'styled-components'
 
@@ -26,7 +23,6 @@ class WhatDidILend extends Component {
         }
     }
     render() {
-        const userId = this.props.match.params.userId
         return (
             <div>
                 <NavBar />

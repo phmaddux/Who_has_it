@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios'
-import { Redirect, Link, withRouter } from 'react-router-dom'
+import { Redirect, withRouter } from 'react-router-dom'
 import TextField from "material-ui/TextField"
 import FlatButton from 'material-ui/FlatButton';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 class NewPersonForm extends Component {
     state = {

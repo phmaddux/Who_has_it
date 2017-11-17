@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios'
-import { Redirect, Link, withRouter } from 'react-router-dom'
-import { Card, CardActions, CardHeader, CardMedia, CardTitle, CardText } from 'material-ui/Card'
+import { Redirect, withRouter } from 'react-router-dom'
 import FlatButton from 'material-ui/FlatButton'
 import NavBar from "./NavBar.js"
-import Avatar from 'material-ui/Avatar';
 import ProfileCard from './ProfileCard.js'
 import TextField from "material-ui/TextField"
 import styled from 'styled-components'

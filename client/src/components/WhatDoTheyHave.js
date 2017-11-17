@@ -96,7 +96,6 @@ class WhatDoTheyHave extends Component {
     }
     deleteSubmit = async (event) => {
         event.preventDefault()
-        const userId = this.props.match.params.userId
         if (window.confirm(`Are you sure you want to delete this person?`)) {
             const personId = this.props.match.params.personId
             const response = await axios.delete(`/api/people/${personId}/`)
@@ -106,14 +105,12 @@ class WhatDoTheyHave extends Component {
     render() {
         if (this.state.refresh) {
             const userId = this.props.match.params.userId
-            const personId = this.props.match.params.personId
             return <Redirect to={`/users/${userId}/people/`} />
         }
         if (this.state.refresh2) {
             const userId = this.props.match.params.userId
             return <Redirect to={`/users/${userId}/people/`} />
         }
-        const personId = this.props.match.params.personId
         const editError = (
             <div style={{ color: "red" }}>
                 <p>Your edit form was either incomplete or incorrect.</p>

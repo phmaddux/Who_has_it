@@ -31,7 +31,7 @@ const WhoGrid = (props) => (
           <Link to={`/users/${props.userId}/people/${person.id}/items`} />
           }
         >
-          <img src={person.picture} />
+          <img src={person.picture} alt="" />
         </GridTile>
       ))}
     </GridList>

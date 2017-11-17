@@ -3,7 +3,6 @@ import axios from 'axios'
 import { Redirect } from 'react-router-dom'
 import TextField from "material-ui/TextField"
 import FlatButton from 'material-ui/FlatButton';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import styled from 'styled-components'
 
 const Column = styled.div`
