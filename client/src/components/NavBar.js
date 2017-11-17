@@ -6,12 +6,12 @@ const StyledNavBar = styled.div`
 display: flex;
 justify-content: space-around;
 align-items: center;
+font-size: 1.7rem;
 `
 const HeaderLink = styled.div`
 display: flex;
 align-items: center;
 text-decoration: none;
-font-size: 1.5rem;
 padding: 20px;
 `
 class NavBar extends Component {

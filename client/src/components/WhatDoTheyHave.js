@@ -11,8 +11,12 @@ import NavBar from "./NavBar.js"
 import PersonCard from './PersonCard.js'
 import SpecificItems from './SpecificItems.js'
 import TextField from "material-ui/TextField"
+import styled from 'styled-components'
 
-
+const Styled = styled.h1`
+font-size: 1.3rem;
+text-align: center;
+`
 class WhatDoTheyHave extends Component {
     state = {
         person: {
@@ -23,6 +27,8 @@ class WhatDoTheyHave extends Component {
         refresh2: false,
         editError: false,
         editForm: false,
+        editItemError: false,
+        editItemField: false,
     }
     async componentWillMount() {
         try {
@@ -230,7 +236,6 @@ class WhatDoTheyHave extends Component {
         return (
             <div>
                 <NavBar />
-                <p>What exactly did I lend {this.state.person.nickname}?</p>
                 <PersonCard person={this.state.person} />
                 <FlatButton label="Would I lend to them again?" />
                 <FlatButton label="Edit" onClick={this.openEditSubmit} />
@@ -248,7 +253,7 @@ class WhatDoTheyHave extends Component {
                 <div>
                     {this.state.addField ? addForm : null}
                 </div>
-                <p>What have I lent them?</p>
+                <Styled>What exactly did I lend {this.state.person.nickname}?</Styled>
                 <SpecificItems items={this.state.items} />
             </div>
         );

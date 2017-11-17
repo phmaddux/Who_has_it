@@ -3,6 +3,7 @@ import { Card, CardActions, CardHeader, CardText } from 'material-ui/Card';
 import FlatButton from 'material-ui/FlatButton';
 import Avatar from 'material-ui/Avatar';
 
+
 const SpecificItems = (props) => (
     <div>
         {props.items.map((item, index) => (
