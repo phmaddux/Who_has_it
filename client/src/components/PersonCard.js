@@ -16,11 +16,6 @@ const PersonCard = (props) => (
                 <CardText expandable={true}>
                 <p>Name: {props.person.first_name} {props.person.last_name}</p>
                 <p>Email: {props.person.email} Phone: {props.person.phone}</p>
-                    <CardActions>
-                        <FlatButton label="Would I lend to them again?" />
-                        <FlatButton label="Edit" />
-                        <FlatButton label="Delete" />
-                    </CardActions>
                 </CardText>
             </Card>
     </div>

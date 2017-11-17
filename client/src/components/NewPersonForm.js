@@ -47,7 +47,6 @@ class NewPersonForm extends Component {
         }
         return (
             <div style={{ margin: "10px" }}>
-                <h1>New Person!</h1>
                 <div id="newPersonFlash" style={{ color: "red", display: "none" }}>
                 <p>Your 'new person' form was either incomplete or incorrect. You have to at least have a nickname for them.</p>
                 <p>If you don't you probably don't know them well enough to lend them your things...</p>
@@ -103,21 +102,21 @@ class NewPersonForm extends Component {
                         />
                     </div>
                     <div>
-                        <label htmlFor="notes">Item: </label>
+                        <label htmlFor="name">Item: </label>
                         <TextField
                             onChange={this.handleChange} name="name"
                             type="text" value={this.state.person.item.name}
                         />
                     </div>
                     <div>
-                        <label htmlFor="notes">Picture Url: </label>
+                        <label htmlFor="picture">Picture Url: </label>
                         <TextField
                             onChange={this.handleChange} name="picture"
                             type="text" value={this.state.person.item.picture}
                         />
                     </div>
                     <div>
-                        <label htmlFor="notes">Item Description: </label>
+                        <label htmlFor="description">Item Description: </label>
                         <TextField
                             onChange={this.handleChange} name="description"
                             type="text" value={this.state.person.item.description}

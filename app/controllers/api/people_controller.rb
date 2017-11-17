@@ -19,7 +19,7 @@ class Api::PeopleController < ApplicationController
         render json: @person
     end
     def destroy
-        @person = Person.find(params[:id]).delete
+        @person = Person.find(params[:id]).destroy
         render status: :ok
     end
     private

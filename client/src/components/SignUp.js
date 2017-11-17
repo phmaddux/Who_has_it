@@ -51,7 +51,10 @@ class SignUp extends Component {
         return (
             <Column style={{ margin: "10px" }}>
                 <h1>Sign Up</h1>
-                <div id="flash" style={{ color: "red", display: "none" }}>Your 'Sign Up' form was either incomplete or incorrect. Please fill out the required fields and try again.</div>
+                <div id="flash" style={{ color: "red", display: "none" }}>
+                <p>Your Sign Up form was either incomplete or incorrect.</p>
+                <p>Please fill out the required fields and try again.</p>
+                </div>
                 <form onSubmit={this.handleSubmit}>
                     <div>
                         <label htmlFor="username">Username:</label>

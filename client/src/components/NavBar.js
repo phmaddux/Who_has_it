@@ -4,13 +4,12 @@ import { Link, withRouter } from 'react-router-dom'
 
 const StyledNavBar = styled.div` 
 display: flex;
-justify-content: space-between;
+justify-content: space-around;
 align-items: center;
 `
 const HeaderLink = styled.div`
 display: flex;
 align-items: center;
-justify-content: space-between;
 text-decoration: none;
 font-size: 1.5rem;
 padding: 20px;

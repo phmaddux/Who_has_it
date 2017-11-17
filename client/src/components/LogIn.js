@@ -54,7 +54,10 @@ class LogIn extends Component {
         return (
             <Column style={{ margin: "10px" }}>
                 <h1>Log In</h1>
-                <div id="logInFlash" style={{ color: "red", display: "none" }}>Your Login In was either incomplete or incorrect. Please fill out the required fields and try again.</div>
+                <div id="logInFlash" style={{ color: "red", display: "none" }}>
+                <p>Your Log In In was either incomplete or incorrect.</p>
+                <p>Please fill out the required fields and try again.</p>
+                </div>
                 <form onSubmit={this.logIn}>
                     <div>
                         <label htmlFor="username">Username: </label>

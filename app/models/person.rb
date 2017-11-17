@@ -1,7 +1,7 @@
 class Person < ApplicationRecord
     validates :nickname, presence: true
-    has_many :items
+    has_many :items, dependent: :destroy
 end
 
-# dependent: :destroy
+# 
 # do the items need to be dependant on the people as well?

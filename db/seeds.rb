@@ -76,8 +76,8 @@ garrett = Person.create({
 })
 josh = Person.create({
     nickname: "Josh",
-    first_name: "",
-    last_name: "",
+    first_name: "Josh",
+    last_name: "Quinn",
     email: "placeholder@place.com",
     phone_number: "555-867-5309",
     picture: "https://i.imgur.com/qB4quWf.png",
