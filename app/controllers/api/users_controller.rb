@@ -4,10 +4,10 @@ class Api::UsersController < ApplicationController
         render json: @users
     end
     def show
-        if params[:id] == "name"
-            @user = User.find(params[:id])
+        if params[:id][0]  =~ /[A-Za-z]/
+            @user = User.find_by_username(params[:id])
             render json: @user
-        elsif
+        else
             @user = User.find(params[:id])
             render json: @user
         end

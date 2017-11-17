@@ -17,11 +17,11 @@ class YourProfile extends Component {
     }
     async componentWillMount() {
         try {
-            const userId = this.props.match.params.userId
+            const userId = this.props.match.params.userId      
+            console.log(userId)      
             const response = await axios.get(`/api/users/${userId}/`)
             console.table(response.data)
             this.setState({ user: response.data })
-            console.table(response.data)
         } catch (error) {
             console.log(error)
         }
@@ -52,6 +52,17 @@ class YourProfile extends Component {
         event.preventDefault()
         try {
             this.setState({ editField: true })
+        } catch (error) {
+            console.log(error)
+        }
+    }
+    deleteSubmit = async (event) => {
+        event.preventDefault()
+        try {
+            const userId = this.props.match.params.userId
+            const response = await axios.delete(`/api/users/${userId}/`)
+            this.setState({ user: response.data })
+            return <Redirect to={`/`} />
         } catch (error) {
             console.log(error)
         }
