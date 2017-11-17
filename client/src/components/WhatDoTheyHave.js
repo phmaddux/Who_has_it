@@ -37,26 +37,11 @@ class WhatDoTheyHave extends Component {
         }
     }
     render() {
-        const styles = {
-            root: {
-                display: 'flex',
-                flexWrap: 'wrap',
-                justifyContent: 'space-around',
-            },
-            gridList: {
-                width: 400,
-                height: 400,
-                overflowY: 'auto',
-                cols: 4,
-            },
-        };
         const personId = this.props.match.params.personId
         return (
             <div>
                 <NavBar />
-                <p>What exactly did I lend them? {this.state.person.nickname}</p>
-                <br></br>
-                <p>Person</p>
+                <p>What exactly did I lend {this.state.person.nickname}?</p>
                 <PersonCard person={this.state.person} />
                 <br></br>
                 <p>What have I lent them?</p>

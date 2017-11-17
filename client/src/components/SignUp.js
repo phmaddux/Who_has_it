@@ -4,8 +4,13 @@ import { Redirect } from 'react-router-dom'
 import TextField from "material-ui/TextField"
 import FlatButton from 'material-ui/FlatButton';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import styled from 'styled-components'
 
-
+const Column = styled.div`
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+`
 class SignUp extends Component {
     state = {
         user: {
@@ -44,7 +49,7 @@ class SignUp extends Component {
             div.style.display = "block"
         }
         return (
-            <div style={{ margin: "10px" }}>
+            <Column style={{ margin: "10px" }}>
                 <h1>Sign Up</h1>
                 <div id="flash" style={{ color: "red", display: "none" }}>Your 'Sign Up' form was either incomplete or incorrect. Please fill out the required fields and try again.</div>
                 <form onSubmit={this.handleSubmit}>
@@ -63,14 +68,14 @@ class SignUp extends Component {
                         />
                     </div>
                     <div>
-                        <label htmlFor="password">Password</label>
+                        <label htmlFor="password">Password:</label>
                         <TextField
                             onChange={this.handleChange} name="password"
                             type="text" value={this.state.user.password}
                         />
                     </div>
                     <div>
-                        <label htmlFor="picture">Picture</label>
+                        <label htmlFor="picture">Picture Url:</label>
                         <TextField
                             onChange={this.handleChange} name="picture"
                             type="text" value={this.state.user.picture}
@@ -80,7 +85,7 @@ class SignUp extends Component {
                         backgroundColor: "#72E0FF"
                     }} />
                 </form>
-            </div>
+            </Column>
         );
     }
 }

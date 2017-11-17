@@ -12,7 +12,7 @@ burns = User.create({
     username: "Burns",
     email: "placeholder@place.com",
     password: "password",
-    picture: "https://i.imgur.com/rfo9mY1.png",
+    picture: "https://i.imgur.com/KXmimfw.png",
 })
 tommy = Person.create({
     nickname: "Tommy",
@@ -100,7 +100,7 @@ carter = Person.create({
     last_name: "M",
     email: "placeholder@place.com",
     phone_number: "555-867-5309",
-    picture: "https://i.imgur.com/6PQ4e15.png",
+    picture: "https://i.imgur.com/nDglykg.png",
     would_lend_again: false,
     notes: "My weird little cousin, he's fine to lend things to.",
 })

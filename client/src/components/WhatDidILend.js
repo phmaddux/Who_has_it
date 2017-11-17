@@ -6,6 +6,11 @@ import FlatButton from 'material-ui/FlatButton'
 import NavBar from "./NavBar.js"
 import NewPersonForm from "./NewPersonForm.js"
 import WhatGrid from "./WhatGrid.js"
+import styled from 'styled-components'
+
+const StyledWriting = styled.h3`
+text-align: center;
+`
 class WhatDidILend extends Component {
     state = {
         items: [],
@@ -25,14 +30,7 @@ class WhatDidILend extends Component {
         return (
             <div>
                 <NavBar />
-                <p>Okay, what's missing from my life?</p>
-                <span>
-                    <button>Buttons</button>
-                    <button>Buttons</button>
-                    <button>Buttons</button>
-                </span>
-                <br></br>
-                <br></br>
+                <StyledWriting>Okay, what's missing from my life?</StyledWriting>
                 <WhatGrid
                     items={this.state.items}
                     userId={this.props.match.params.userId}

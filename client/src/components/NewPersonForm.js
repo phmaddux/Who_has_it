@@ -8,7 +8,9 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 class NewPersonForm extends Component {
     state = {
-        person: {},
+        person: {
+            item: {},
+        },
         refresh: false,
         newPersonFlashError: false,
     }
@@ -22,13 +24,12 @@ class NewPersonForm extends Component {
     handleSubmit = async (event) => {
         event.preventDefault()
         try {
-            console.log(1)
             const userId = this.props.match.params.userId 
-            console.log(userId)
             const response = await axios.post(`/api/users/${userId}/people`, {
                 "person": this.state.person
             })
             console.log(response)
+            this.setState({ item: response.data})
             this.setState({ refresh: true, person: response.data })
         } catch (error) {
             this.setState({ newPersonFlashError: true })
@@ -99,6 +100,27 @@ class NewPersonForm extends Component {
                         <TextField
                             onChange={this.handleChange} name="notes"
                             type="text" value={this.state.person.notes}
+                        />
+                    </div>
+                    <div>
+                        <label htmlFor="notes">Item: </label>
+                        <TextField
+                            onChange={this.handleChange} name="name"
+                            type="text" value={this.state.person.item.name}
+                        />
+                    </div>
+                    <div>
+                        <label htmlFor="notes">Picture Url: </label>
+                        <TextField
+                            onChange={this.handleChange} name="picture"
+                            type="text" value={this.state.person.item.picture}
+                        />
+                    </div>
+                    <div>
+                        <label htmlFor="notes">Item Description: </label>
+                        <TextField
+                            onChange={this.handleChange} name="description"
+                            type="text" value={this.state.person.item.description}
                         />
                     </div>
                     <FlatButton label="Submit" type="submit" style={{

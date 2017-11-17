@@ -7,7 +7,11 @@ import NavBar from "./NavBar.js"
 import Avatar from 'material-ui/Avatar';
 import ProfileCard from './ProfileCard.js'
 import TextField from "material-ui/TextField"
+import styled from 'styled-components'
 
+const StyledWriting = styled.h3`
+text-align: center;
+`
 class YourProfile extends Component {
     state = {
         user: {},
@@ -58,13 +62,11 @@ class YourProfile extends Component {
     }
     deleteSubmit = async (event) => {
         event.preventDefault()
-        try {
+        if(window.confirm(`Are you sure you want to delete your profile?`)) {
             const userId = this.props.match.params.userId
             const response = await axios.delete(`/api/users/${userId}/`)
             this.setState({ user: response.data })
             return <Redirect to={`/`} />
-        } catch (error) {
-            console.log(error)
         }
     }
     render() {
@@ -117,9 +119,7 @@ class YourProfile extends Component {
         return (
             <div>
                 <NavBar />
-                <p>Your information</p>
-                <br></br>
-                <br></br>
+                <StyledWriting>Your information</StyledWriting>
                 <ProfileCard user={this.state.user} />
                 <span>
                     <FlatButton label="Edit Profile" onClick={this.openEditSubmit} />

@@ -9,10 +9,16 @@ import { Card, CardActions, CardHeader, CardMedia, CardTitle, CardText } from 'm
 import FlatButton from 'material-ui/FlatButton'
 import NavBar from "./NavBar.js"
 import WhoGrid from "./WhoGrid.js"
+import styled from 'styled-components'
+import NewPersonForm from './NewPersonForm'
 
+const StyledWriting = styled.h3`
+text-align: center;
+`
 class WhoHasIt extends Component {
     state = {
         people: [],
+        newPerson: false,
     }
     async componentWillMount() {
         try {
@@ -24,20 +30,29 @@ class WhoHasIt extends Component {
             console.log(error)
         }
     }
+    openNewPerson = async (event) => {
+        event.preventDefault()
+        try {
+            this.setState({ newPerson: true })
+        } catch (error) {
+            console.log(error)
+        }
+    }
     render() {
         const userId = this.props.match.params.userId
+        const newPerson = (
+            <NewPersonForm />
+        )
+
         return (
             <div>
                 <NavBar />
-                <p>Seriously, who has all my stuff?</p>
+                <StyledWriting>Seriously, who has all my stuff?</StyledWriting>
+                <WhoGrid people={this.state.people} userId={this.props.match.params.userId} />
                 <span>
-                    <button>Buttons</button>
-                    <button>Buttons</button>
-                    <button>Buttons</button>
+                    <FlatButton label="New Person" onClick={this.openNewPerson} />
+                    { this.state.newPerson ? newPerson : null }
                 </span>
-                <br></br>
-                <br></br>
-               <WhoGrid people={this.state.people} userId={this.props.match.params.userId} />
             </div >
         );
     }

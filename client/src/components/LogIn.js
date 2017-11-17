@@ -4,7 +4,13 @@ import { Redirect } from 'react-router-dom'
 import TextField from "material-ui/TextField"
 import FlatButton from 'material-ui/FlatButton';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import styled from 'styled-components'
 
+const Column = styled.div`
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+`
 class LogIn extends Component {
     state = {
         user: {
@@ -46,7 +52,7 @@ class LogIn extends Component {
             div.style.display = "block"
         }
         return (
-            <div style={{ margin: "10px" }}>
+            <Column style={{ margin: "10px" }}>
                 <h1>Log In</h1>
                 <div id="logInFlash" style={{ color: "red", display: "none" }}>Your Login In was either incomplete or incorrect. Please fill out the required fields and try again.</div>
                 <form onSubmit={this.logIn}>
@@ -68,7 +74,7 @@ class LogIn extends Component {
                         backgroundColor: "#72E0FF"
                     }} />
                 </form>
-            </div>
+            </Column>
         );
     }
 }
